@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>C revise | Note Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="输入流&amp;输出流输出流 默认右对齐，而%-4d 使得数字左对齐即123*,  %.3d表示最少出现3个数字，0占位 %.3f表示浮点数保留三位小数 123int y &#x3D; 10;printf(&quot;%-4.3d&quot;,y);	&#x2F;&#x2F;010 ,为输出printf(&quot;%06d&quot;,y);	&#x2F;&#x2F;000010,用零占位	 &#96;&#96;&#96;cprintf(“line1”,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C revise">
+<meta property="og:url" content="http://example.com/2021/05/17/C-revise/index.html">
+<meta property="og:site_name" content="Note Blog">
+<meta property="og:description" content="输入流&amp;输出流输出流 默认右对齐，而%-4d 使得数字左对齐即123*,  %.3d表示最少出现3个数字，0占位 %.3f表示浮点数保留三位小数 123int y &#x3D; 10;printf(&quot;%-4.3d&quot;,y);	&#x2F;&#x2F;010 ,为输出printf(&quot;%06d&quot;,y);	&#x2F;&#x2F;000010,用零占位	 &#96;&#96;&#96;cprintf(“line1”,">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-17T09:34:49.000Z">
+<meta property="article:modified_time" content="2021-05-17T09:35:38.388Z">
+<meta property="article:author" content="Bullet37">
+<meta property="article:tag" content="C">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Note Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Note Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-C-revise" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/17/C-revise/" class="article-date">
+  <time class="dt-published" datetime="2021-05-17T09:34:49.000Z" itemprop="datePublished">2021-05-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      C revise
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="输入流-amp-输出流"><a href="#输入流-amp-输出流" class="headerlink" title="输入流&amp;输出流"></a>输入流&amp;输出流</h2><h3 id="输出流"><a href="#输出流" class="headerlink" title="输出流"></a>输出流</h3><ul>
+<li><p>默认右对齐，而%-4d 使得数字左对齐即123*, </p>
+<p>%.3d表示最少出现3个数字，0占位</p>
+<p>%.3f表示浮点数保留三位小数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> y = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%-4.3d&quot;</span>,y);	<span class="comment">//010 ,为输出</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%06d&quot;</span>,y);	<span class="comment">//000010,用零占位	</span></span><br></pre></td></tr></table></figure></li>
+<li><p>```c<br>printf(“line1”,    </p>
+<pre><code>  &quot;line2&quot;)；
+</code></pre>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  通过这种方式避免过长的字符串。</span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">- %g: 最短方式输出数字</span><br><span class="line"></span><br><span class="line">  %f: 输出6位小数</span><br><span class="line"></span><br><span class="line">  %x: 十六进制数字</span><br><span class="line"></span><br><span class="line">  %o: 八进制数字</span><br><span class="line"></span><br><span class="line">  %u: 无符号型</span><br><span class="line"></span><br><span class="line">  %hd: 短整数</span><br><span class="line"></span><br><span class="line">  %ld: 长整数 (后缀如68L也可),只有scanf中有效</span><br><span class="line"></span><br><span class="line">  %u: 无符号 (后缀如68U也可</span><br><span class="line"></span><br><span class="line">  %g: 科学计数法，如1e-9</span><br><span class="line"></span><br><span class="line">  %i: 在输出流中并无区别</span><br><span class="line"></span><br><span class="line">- printf函数返回显示的字符数量</span><br><span class="line"></span><br><span class="line">- /b 取消最后一个单字符。 // 输出/，%% 输出 %</span><br><span class="line"></span><br><span class="line">### 输入流</span><br><span class="line"></span><br><span class="line">- scanf 函数寻找数字时忽略/n,空格等，但最后可能留下/n被字符型变量读取。</span><br><span class="line"></span><br><span class="line">- getchar()可能读取scanf留下的/n</span><br><span class="line"></span><br><span class="line">- 读取char类型时，添加空格忽略空白字符</span><br><span class="line"></span><br><span class="line">  ```c</span><br><span class="line">  scanf(&quot; %c&quot;,&amp;ch);</span><br></pre></td></tr></table></figure></li>
+<li><p>读取3/4，3/ 4，3 /4时注意空格会被与‘/’匹配，报错后会留下该空格</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d/%d&quot;</span>,&amp;a,&amp;b);</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d/ %d&quot;</span>,&amp;a,&amp;b);</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d /%d&quot;</span>,&amp;a,&amp;b);</span><br></pre></td></tr></table></figure></li>
+<li><p>%i: 将数字当作八进制(056)或16进制(0x56)处理，取决于输入格式</p>
+</li>
+<li><p>注意在scanf中不要加入空字符如’\n’</p>
+</li>
+<li><p>gets()函数不跳过开始空字符，并添加结尾空字符，scanf无法读入空字符</p>
+</li>
+<li><p>strcpy()返回值为复制的字符串</p>
+</li>
+<li><p>scanf返回值代表的是正确匹配的参数个数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int a;</span><br><span class="line">while(scanf(&quot;%d&quot;, &amp;a)==EOF)break;//	可读至文件末尾</span><br></pre></td></tr></table></figure></li>
+<li><p>scanf(“%1d”,&amp;int_val); 可读入一位整数，%.1d 在scanf中不合法</p>
+</li>
+<li><p>double  %lf</p>
+<p>unsigned long int    %lu</p>
+<p>long double    %Lf</p>
+<p>short int    %hd</p>
+</li>
+</ul>
+<h2 id="变量作用域-amp-存储期限"><a href="#变量作用域-amp-存储期限" class="headerlink" title="变量作用域&amp;存储期限"></a>变量作用域&amp;存储期限</h2><ul>
+<li>static 静态变量永久保存,初始值为0，作用域取决于声明的程序块，只在程序块内可见(内部链接或无链接)</li>
+<li>static只初始化一次,静态数组自动置0</li>
+<li>在程序块外部声明的变量(程序最外部)拥有文件作用域，外部链接，可被其他文件通过声明extern 变量共享</li>
+<li>register变量不可通过&amp;取得地址，不可通过指针修改，其余类似auto</li>
+<li>static function 仅在定义文件中可见，更易维护，extern function 无任何特殊作用</li>
+</ul>
+<h2 id="宏"><a href="#宏" class="headerlink" title="宏"></a>宏</h2><ul>
+<li><p>#define generate_type  type type##_max(type a,type s); </p>
+<p>可起到类似重载函数的效果，##表示字符化的拼接</p>
+</li>
+<li><p>宏只在预编译中被处理，编译器无法看到任何的宏</p>
+</li>
+<li><p>谨慎使用带参数的宏, s尽量多的使用括号</p>
+</li>
+<li><p>#define P(n) printf(#n = “%d”,n);</p>
+<p>字符串化n并输出，黑科技</p>
+</li>
+<li><p>以两个下划线开头结尾的为程序预定义宏:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__LINE__ __DATE__ __FILE__</span><br></pre></td></tr></table></figure></li>
+<li><p>#if defined = #ifdef  #if !defined =  #ifndef ,</p>
+<p>与#elseif, #else, #endif 等一起使用，#if 0 … 不会简单的跳过…内容</p>
+</li>
+</ul>
+<h2 id="指针数组-amp-数组指针"><a href="#指针数组-amp-数组指针" class="headerlink" title="指针数组&amp;数组指针"></a>指针数组&amp;数组指针</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//指针数组</span><br><span class="line">char *arr[4] = &#123;&quot;hello&quot;, &quot;world&quot;, &quot;shannxi&quot;, &quot;xian&quot;&#125;; //指针数组，4个元素都为指针的数组</span><br><span class="line">int main(int argc, char *argv[]);//便为指针数组</span><br><span class="line"></span><br><span class="line">// 数组指针</span><br><span class="line">char (*arr)[4];// 数组指针，指向 char ch[4] 类型的数组</span><br><span class="line">arr= &amp;ch;</span><br></pre></td></tr></table></figure>
+
+<h2 id="位运算技巧"><a href="#位运算技巧" class="headerlink" title="位运算技巧"></a>位运算技巧</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//&amp; | ^ ~</span><br><span class="line">int a = 7;	//二进制0111</span><br><span class="line">a = a&gt;&gt;2;	//快速除二</span><br><span class="line"></span><br><span class="line">a&amp;(a-1);	//每次消掉a的一位</span><br><span class="line">(a&amp;b) + ((a^b) &gt;&gt; 1);	//取平均值</span><br><span class="line">(1&lt;&lt;31)-1;//int的最大值</span><br><span class="line">(1&lt;&lt;31);//int的最小值</span><br><span class="line">((long long)1&lt;&lt;63)-1;//long long的最大值</span><br><span class="line">((long long)1&lt;&lt;63);//long long的最小值</span><br><span class="line"></span><br><span class="line">//交换两个数</span><br><span class="line">a^=b;</span><br><span class="line">b^=a;</span><br><span class="line">a^=b;</span><br></pre></td></tr></table></figure>
+
+<h2 id="屯屯屯屯-烫烫烫烫"><a href="#屯屯屯屯-烫烫烫烫" class="headerlink" title="屯屯屯屯 烫烫烫烫"></a>屯屯屯屯 烫烫烫烫</h2><ul>
+<li><p>屯屯屯屯 为未定义堆内存，0xCDCDCD</p>
+</li>
+<li><p>堆内存：(heap)</p>
+<p>程序员自己申请、自己释放，可能发生内存泄露。如new申请的堆内存。</p>
+<p>堆内存常用链表的方式不连续存在，大小受限于计算机系统中有效的虚拟内存，所以堆获得的空间比较灵活，也比较大。</p>
+<p>分配较慢，一般在堆的头部用一个字节存放堆的大小。</p>
+</li>
+<li><p>烫烫烫烫 为未定义栈内存，0xCCCCCC</p>
+</li>
+<li><p>栈内存：(stack)</p>
+<p>编译器自动分配和释放，如函数参数、局部变量、临时变量等等。</p>
+<p>是一块连续的内存的区域。栈顶的地址和栈的最大容量是系统预先规定好的。</p>
+</li>
+<li><p>静态存储区：</p>
+<p>在程序编译的时候就已分配好，在程序的整个运行期间都存在。存放静态数据、全局数据和常量。</p>
+</li>
+<li><p>C语言中区分初始化和未初始化的，C++中不再区分了。</p>
+</li>
+</ul>
+<h2 id="Other-Details"><a href="#Other-Details" class="headerlink" title="Other Details"></a>Other Details</h2><ul>
+<li><p>对k=14;的赋值语句，该句子返回值即为14</p>
+</li>
+<li><p>符合赋值语句从右往左读，a+=j+=k  == a+=(j+=k)</p>
+</li>
+<li><p>a++ 在同一语句中优先级较++a高</p>
+</li>
+<li><p>else与最近的if相匹配</p>
+</li>
+<li><p>逗号‘，’是优先级最低的运算符</p>
+</li>
+<li><p>尽量避免使用goto运算符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">goto lable;</span><br><span class="line">label: dosomething;</span><br></pre></td></tr></table></figure></li>
+<li><p>​    ; 其实是一行空语句。。。</p>
+</li>
+<li><p>类型定义：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">typedef int wchar;</span><br><span class="line">#define int wchar;</span><br></pre></td></tr></table></figure></li>
+<li><p>在将数组传递给函数时，退化为指针，故不可使用sizeof(a)/sizeof(a[0])求出数组长度</p>
+</li>
+<li><p>C语言不允许函数定义的嵌套</p>
+</li>
+<li><p>指针常量，指针P无法被修改，必须在声明时定义初值：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int* const P;</span><br></pre></td></tr></table></figure></li>
+<li><p>常量指针，指针P指向的数据无法被修改：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const int* P;</span><br></pre></td></tr></table></figure></li>
+<li><p>数组名字不是指针，仅仅是编译器可当作常量指针处理(不可指向他处)，sizeof()结果与普通指针不同</p>
+</li>
+<li><p>字符串最后有\0表示结尾</p>
+</li>
+<li><p>形式参数中*a == a[]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#define Disk(ss\</span><br><span class="line"> 			sss\</span><br><span class="line"> 			sss) //宏的换行</span><br></pre></td></tr></table></figure></li>
+<li><p>枚举,可用一个代替多个宏:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">enum e&#123;A,B,C,D&#125; alph;</span><br></pre></td></tr></table></figure></li>
+<li><p>为字符数组动态分配内存时需为末尾/0留位</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">char*pc=(char*)malloc(sizeof(str)+1);</span><br></pre></td></tr></table></figure></li>
+<li><p>calloc函数相比malloc会给内存置0</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a=calloc(n,sizeof(int));</span><br></pre></td></tr></table></figure></li>
+<li><p>-&gt;运算符,优先级高于&amp;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node-&gt;value=10;</span><br><span class="line">(*node).value=10;</span><br><span class="line">scanf(&quot;%d&quot;,&amp;node-&gt;value)</span><br></pre></td></tr></table></figure></li>
+<li><p>函数名不带括号时，为函数指针。</p>
+</li>
+<li><p>return 不能返回指向自动储存变量的指针，会被销户</p>
+</li>
+<li><p>只能对无符号数进行移位处理&gt;&gt;,&lt;&lt;</p>
+</li>
+<li><p>C语言可通过结构作出节省内存的位域操作,必须为unsigned，且占4bit或8bit</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct f&#123;</span><br><span class="line">unsigned int: 1;</span><br><span class="line">unsigned bool: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>打开文件读写</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fopen(&quot;text.txt&quot;,&quot;r&quot;);</span><br></pre></td></tr></table></figure></li>
+<li><p>%求余运算符处理的两个数都会转变为int</p>
+</li>
+<li><p>小数转为8进制，乘8取头</p>
+</li>
+<li><p>i&lt;j&lt;k, 比较转变为 i&lt;0 或 i&lt;1</p>
+</li>
+<li><p>float a = 1/3; a=0! 1/3可能结果为整数，改用 1.0/3.0</p>
+</li>
+<li><p>0.1类型为double而非float</p>
+</li>
+<li><p>C产生随机数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">srand((unsigned)time(NULL));//	为防止随机数每次重复，使用系统时间初始化随机种子</span><br><span class="line">num = rand()%100; //产生0-99之间的随机数；</span><br></pre></td></tr></table></figure></li>
+<li><p>void*不可用作运算</p>
+</li>
+<li><p>C math函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;math.h&gt;</span><br><span class="line">const double PI = acos(-1.0);</span><br><span class="line">//注意以下全返回浮点数</span><br><span class="line">ceil(PI);	//向上取整，4.0</span><br><span class="line">floor(PI);	//向下取整，3.0</span><br><span class="line">round(PI);	//四舍五入，3.0</span><br></pre></td></tr></table></figure></li>
+<li><p>有关sizeof</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sizeof(int)=sizeof(double)=sizeof(pointer)=4;</span><br><span class="line">sizeof(double);	//8</span><br><span class="line">sizeof(char);	//1</span><br><span class="line">sizeof(int_a++);	//4，且只计算a类型而不自增a</span><br><span class="line">sizeof(fun())；	//只算出fun()返回函数大小，不执行fun()</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/17/C-revise/" data-id="ckosex8bq00005gj6fl3t2u7j" data-title="C revise" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/05/17/Cpp-revise/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Cpp revise
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/05/17/Shell-%E7%BC%96%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Shell 编程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 15px;">C</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/05/17/Cpp-revise/">Cpp revise</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/C-revise/">C revise</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/Shell-%E7%BC%96%E7%A8%8B/">Shell 编程</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/vim%E7%BC%96%E8%BE%91%E5%99%A8/">vim编辑器</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/Linux-%E6%8C%87%E4%BB%A4/">Linux 指令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Bullet37<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

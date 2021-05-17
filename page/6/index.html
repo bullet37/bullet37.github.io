@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Note Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Note Blog">
+<meta property="og:url" content="http://example.com/page/6/index.html">
+<meta property="og:site_name" content="Note Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Bullet37">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Note Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Note Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Python-revise" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/17/Python-revise/" class="article-date">
+  <time class="dt-published" datetime="2021-05-17T09:14:56.000Z" itemprop="datePublished">2021-05-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/17/Python-revise/">Python revise</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Python-revise"><a href="#Python-revise" class="headerlink" title="Python  revise"></a>Python  revise</h1><ul>
+<li><p>通过缩进来判断程序块</p>
+</li>
+<li><p>面向对象的动态语言</p>
+</li>
+</ul>
+<h2 id="常用可迭代对象"><a href="#常用可迭代对象" class="headerlink" title="常用可迭代对象"></a>常用可迭代对象</h2><p>python 会根据散列表的拥挤程度扩容。占用接近 2/3 时，数组就会扩容。</p>
+<h3 id="str-字符串"><a href="#str-字符串" class="headerlink" title="str 字符串"></a>str 字符串</h3><ul>
+<li><p>如果字符串中有’ ‘而没有” “则用” “包裹，否则应该用’ ‘包裹, 可以用/转义使用 “ 或 ‘</p>
+</li>
+<li><p>通过re库正则化可以得到更好的效果</p>
+</li>
+<li><p>在字符串前加入r, 使得/的转义效果无效,常用于地址</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">path = <span class="string">r&#x27;C:\Users\99253\Desktop\study\Blog文件\Python Library&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>多行的长字符串也可以用’\n’续行, 续行的行首空白不被忽略, 或使用””” “”” 3倍引用，或用 ‘ \ ‘延续句子</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">s = &quot;1/n   2&quot;</span><br><span class="line"></span><br><span class="line">s = &quot;&quot;&quot; </span><br><span class="line"> 	1dsfg&#x27;s&#x27;df</span><br><span class="line"> 2dsfg</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    </span><br><span class="line">s = &#x27;afsdf\</span><br><span class="line">asdf&#x27;</span><br></pre></td></tr></table></figure></li>
+<li><p>字符串的拼接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x = &#x27;sdf&#x27; + &quot;sdf&quot;</span><br><span class="line">y = &#x27;ss&#x27;*3	# 重复与拼接</span><br><span class="line">z = &quot;%s%s&quot; % (x, y) </span><br><span class="line">z = &quot;&#123;&#125;&#123;&#125;&quot;.format(x, y) </span><br><span class="line">z = &quot;&#123;0&#125;&#123;1&#125;&quot;.format(x, y)</span><br><span class="line">x == x[:2] + x[2:]	# True</span><br><span class="line"># 过大的下标被换成字符串长度，上界小于下界时返回空串</span><br></pre></td></tr></table></figure></li>
+<li><p>字符串常用操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">s.upper() s.lower()	# 转换成大小写</span><br><span class="line">s.swapcase()	# 大小写互换</span><br><span class="line">s.title()	# 首字母大写</span><br><span class="line">s.capitalize() # 首字母大写，其余小写</span><br><span class="line">s.ljust(width)  str.rjust(20) s.center(20) # 右左中对齐，空格补全长度</span><br><span class="line">s.find(&#x27;t&#x27;,start,end)	# 指定起始及结束位置搜索t,可省始末位置，找不到返回-1</span><br><span class="line">s.rfind(&#x27;t&#x27;)	# 从右边开始找t</span><br><span class="line">s.index(&#x27;t&#x27;,start,end)	# 指定起始及结束位置搜索t,可省始末位置，找不到返回异常</span><br><span class="line">s.count(&#x27;t&#x27;)	# t在s中的数量</span><br><span class="line">s.replace(&#x27;old&#x27;,&#x27;new&#x27;,maxReplaceTimes)	# 替换子串，默认全换</span><br><span class="line">s.split(&#x27;-&#x27;)	# 以-分割字符串, 返回字串list</span><br><span class="line">s.strip(&#x27;&#123;|&#125;&#x27;) s.rstrip() s.lstrip()	# 去两边/左/右空字符或去指定字符</span><br><span class="line"># 字符判等之前要strip防止无法显示的空字符， str1 is str2 </span><br><span class="line">rev = &#x27; &#x27;.join(s.split()[::-1])	# 逐词反转</span><br><span class="line">rev = &#x27; &#x27;.join(reversed(s.split()))</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="list-列表"><a href="#list-列表" class="headerlink" title="list 列表"></a>list 列表</h3><ul>
+<li><p>list中可以有不同类元素,通过关键字 [ ] 创建与识别，属于可变序列</p>
+</li>
+<li><p>具有先后顺序</p>
+</li>
+<li><p>列表创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">i = [x for x in range(1,20,2)] #[1, 3, 5, 7, 9, 11, 13, 15, 17, 19],[ )特性</span><br><span class="line">i = [x*x for x in list2]	# 利用另外列表数据</span><br><span class="line">i = [&#x27;first&#x27;,1,2,3,&#x27;123&#x27;，3.22,&#x27;last&#x27;]</span><br></pre></td></tr></table></figure></li>
+<li><p>列表常用方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">i.count(1)	# 获得1出现次数</span><br><span class="line">len(i) #获取长度</span><br><span class="line">i.reverse() # 反转列表</span><br><span class="line">i.sort()	# 排序列表 1 2 3</span><br><span class="line">i.sort(reverse=True)	# 逆序排列列表 3 2 1</span><br><span class="line">i.copy()	# 浅复制</span><br><span class="line">i.append(1)	# 在list尾部添加元素</span><br><span class="line">i.extend([1,2])	# 在list尾部添加元素,只能为list</span><br><span class="line">i.remove(&#x27;123&#x27;)	# 删除列表指定元素</span><br><span class="line">i.pop()	# 返回删除末项</span><br><span class="line">i.pop(1)	# 返回删除第一个项</span><br><span class="line">del i[2]	# 删除列表第二个元素，注意python从0开始</span><br><span class="line">i.index(&#x27;124&#x27;)	# &#x27;124&#x27;是第几个？从0开始算</span><br><span class="line"></span><br><span class="line">id1 = id(list2)	# 通过id()可以取地址</span><br><span class="line">list2 = list2 + list1	</span><br><span class="line">id2 = id(list2)</span><br><span class="line"># id1!=id2, 并不是真正的尾部添加元素, 而是创建新的列表对象,将原列表的元素和新列表的元素依次</span><br><span class="line">复制到新的列表对象中,较为耗费资源。</span><br><span class="line">list2 = list2 * 2 # 重复列表两次，也是重新创建</span><br><span class="line"></span><br><span class="line">if &#x27;something&#x27; in i	#判断是否在列表中</span><br><span class="line">if &#x27;something&#x27; not in i	#判断是否不在列表中</span><br></pre></td></tr></table></figure></li>
+<li><p>切片</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#tuple/list/string/set/dict</span><br><span class="line">a=[a:b:c]</span><br><span class="line"># a到b，间隔为c eg</span><br><span class="line">i = [x for x in range(1,20)]	</span><br><span class="line"># [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]</span><br><span class="line">i[1:9:2]	# [2, 4, 6, 8] 同样具有左闭右合性质</span><br><span class="line">i[-3:-1]	# 负数表示从末尾开始计数</span><br></pre></td></tr></table></figure></li>
+<li><p>reverse</p>
+<p>该方法返回一个迭代器，可转化为列表输出，但只能使用1次</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = [1,2,3]</span><br><span class="line">b = reverse(a)	# list_reverseiterator, 迭代对象</span><br><span class="line">print(list(b))	# [3,2,1]</span><br><span class="line">print(list(b))	# [] 已经遍历完，变成空数组</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="tuple-元组"><a href="#tuple-元组" class="headerlink" title="tuple 元组"></a>tuple 元组</h3><ul>
+<li><p>为不可变序列，使用 ( ,) 进行创建与识别, 注意逗号是必须的,(1) 为整数1，元组中元素无法修改，也无法增加减少元素。</p>
+</li>
+<li><p>元组可以作为字典的键，列表则不能。</p>
+</li>
+<li><p>元组的访问和处理速度比列表快。</p>
+</li>
+<li><p>对元组切片后得到的也是元组</p>
+</li>
+<li><p>元组常用方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">tup = (&#x27;physics&#x27;, &#x27;chemistry&#x27;, 1997, 2000)	# 注意逗号！</span><br><span class="line">tup = &#x27;physics&#x27;, &#x27;chemistry&#x27;, 1997, 2000	# 同样也默认为元组</span><br><span class="line">sorted(t)	#元组排序</span><br><span class="line">max(tup)	min(tup)# 返回最大值/最小值</span><br><span class="line">len(tup)	# 长度</span><br><span class="line">cmp(tuple1, tuple2)	# 比较</span><br><span class="line">tup.count(1997)	#1997出现次数</span><br><span class="line">tup.index(1997)	#1997索引值，0开始</span><br><span class="line">if x in tup:	# 判断是否在元组中</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="dict-字典"><a href="#dict-字典" class="headerlink" title="dict 字典"></a>dict 字典</h3><ul>
+<li><p>通过dict()或者{ }创建的键值对，通过key索引value</p>
+</li>
+<li><p>key 通过hash 防止重复，无序！</p>
+</li>
+<li><p>字典创建</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dic = dict(name=&#x27;pp&#x27;, age = 18)</span><br><span class="line">dic = &#123;&#x27;name&#x27;:&#x27;pp&#x27;, &#x27;age&#x27;:18&#125;</span><br><span class="line">dic = dict([(&#x27;name&#x27;,&#x27;pp&#x27;), (&#x27;age&#x27;,18)])	# 3种相同效果方法</span><br><span class="line">dic2 = dict.fromkeys([&#x27;name&#x27;,&#x27;age&#x27;])	# fromkeys创建值为空的字典</span><br></pre></td></tr></table></figure></li>
+<li><p>字典常用方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">print(dic[&#x27;name&#x27;])	# &#x27;pp&#x27;,若键不存在，则抛出异常</span><br><span class="line">dic.get(&#x27;name&#x27;, &#x27;default&#x27;)	# 键不存在返回None,可设定default为不存在时默认返回</span><br><span class="line">for i,j in dic.items() # 返回所有键值对</span><br><span class="line">for i in dic.values()/dic.keys()	# 获得所有值/键</span><br><span class="line"></span><br><span class="line">dic[&#x27;name&#x27;] = &#x27;ll&#x27;	# 新建或者更新键值对</span><br><span class="line">dic2 = &#123;&#x27;name&#x27;:&#x27;pp&#x27;, &#x27;age&#x27;:18, &#x27;job&#x27;:&#x27;n&#x27;&#125;</span><br><span class="line">dic.update(dic2)	#将dic2中逐个新建或覆盖到dic</span><br><span class="line"></span><br><span class="line">del(dic[&#x27;name&#x27;])	# 删除键值对</span><br><span class="line">dic.pop(&#x27;age&#x27;)	# 返回并删除指定键值对</span><br><span class="line">dic.popitem()	# 随机返回并删除指定键值对</span><br></pre></td></tr></table></figure></li>
+<li><p>字典的哈希</p>
+<p>hash() 函数可用于字符串，数字(1==1.0, 整数与同大小浮点数hash值相同)</p>
+<p>和字典等</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(bin(hash(dic[&#x27;name&#x27;])))</span><br><span class="line"># 0b101000110000000111111110011001110000001000110110111111011101001</span><br><span class="line"># 取右边3位寻找。</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="set-集合"><a href="#set-集合" class="headerlink" title="set 集合"></a>set 集合</h3><ul>
+<li><p>通过{ } 创建，注意无 : , 所有元素不重复</p>
+</li>
+<li><p>底层通过字典实现，为无value的字典, 无须像元组注意逗号</p>
+</li>
+<li><p>集合常用方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s = &#123;1.2, 3,&#x27;ass&#x27;&#125;</span><br><span class="line">s.add(1)	# 增加元素，若重复则无效</span><br><span class="line">s.remove(1)	# 删除元素</span><br><span class="line">s.clear()	# 清空集合</span><br><span class="line">set(list1)	# 常用去重方法</span><br></pre></td></tr></table></figure></li>
+<li><p>集合的运算</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;1, 2&#125;</span><br><span class="line">b = &#123;1, 3&#125;</span><br><span class="line"></span><br><span class="line">print(a|b)	# 并集, &#123;1,2,3&#125;</span><br><span class="line">print(a.union(b))</span><br><span class="line"></span><br><span class="line">print(a&amp;b)	# 交集, &#123;1&#125;</span><br><span class="line">print(a.intersection(b))</span><br><span class="line"></span><br><span class="line">print(a-b)	# 差集，&#123;2&#125;</span><br><span class="line">print(a.difference(b))</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="zip"><a href="#zip" class="headerlink" title="zip()"></a>zip()</h3><ul>
+<li>返回一个迭代器，可以解释为list,tuple, dict等，返回Iterator，只可使用一次</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1,2,3]</span><br><span class="line">list2 = [100,200]</span><br><span class="line">z = zip(list1,list2) # &lt;zip object at 0x0000024A38E1A800&gt;</span><br><span class="line">print(tuple(z))	#((1, 100), (2, 200))</span><br><span class="line">print(list(z))	# []</span><br></pre></td></tr></table></figure>
+
+<h2 id="深拷贝与浅拷贝"><a href="#深拷贝与浅拷贝" class="headerlink" title="深拷贝与浅拷贝"></a>深拷贝与浅拷贝</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1 = list[:]	# 深复制</span><br><span class="line">list1 = list	# 浅复制</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import copy</span><br><span class="line">list1 = copy.copy(list)	# 浅复制，引用</span><br><span class="line">list1 = copy.deepcopy(list)	# 深复制，开辟新内存</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><h3 id="isinstance-type-类型判断"><a href="#isinstance-type-类型判断" class="headerlink" title="isinstance()  /  type() 类型判断"></a>isinstance()  /  type() 类型判断</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i = [1,2,3] # list</span><br><span class="line">type(i)	# &lt;type &#x27;list&#x27;&gt; 直接获取变量类型</span><br><span class="line">type(&#x27;abc&#x27;)==type(123)	# 类型判同</span><br><span class="line"></span><br><span class="line">isinstance(i, list)	# True</span><br><span class="line"># 若参数2为元组，则满足其中一个即可返回True</span><br><span class="line">isinstance(i, (int, str, list)) </span><br><span class="line">isinstance(&#x27;abc&#x27;,iterable) # 判断是否可迭代，collection库</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>type 也可用于动态创建类，类本身不过是一个名为 type 类的实例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Hello = <span class="built_in">type</span>(<span class="string">&#x27;Hello&#x27;</span>, (<span class="built_in">object</span>,), <span class="built_in">dict</span>(hello=fn))	<span class="comment"># 继承类，fn方法属性</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(Hello)	<span class="comment"># &lt;class &#x27;type&#x27;&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="bin-二进制"><a href="#bin-二进制" class="headerlink" title="bin() 二进制"></a>bin() 二进制</h3><ul>
+<li><p>bin(x)将整数转换为前缀为“0b”的二进制字符串。</p>
+</li>
+<li><p>如果x不是python int对象，它必须定义一个返回整数的索引方法。</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(bin(10)) # 0b1010, 注意类型为字符串</span><br></pre></td></tr></table></figure>
+
+<h3 id="enumerate-枚举"><a href="#enumerate-枚举" class="headerlink" title="enumerate() 枚举"></a>enumerate() 枚举</h3><ul>
+<li><p>对于一个可迭代的（iterable）/可遍历的对象（如列表、字符串），enumerate将其组成一个索引序列，利用它可以同时获得索引和值</p>
+</li>
+<li><p>enumerate()返回的是一个enumerate对象</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">list1 = [1,2,3]</span><br><span class="line">for index, item in enumerate(list1):</span><br><span class="line"># 可接受第二个参数指定开始位置</span><br><span class="line">for index, item in enumerate(list1, 2): #从2开始</span><br><span class="line"></span><br><span class="line"># 轻量化读取大文件行数</span><br><span class="line">count = len(open(filepath, &#x27;r&#x27;).readlines()) # 开销大</span><br><span class="line">count = 0</span><br><span class="line">for index, line in enumerate(open(filepath,&#x27;r&#x27;))： </span><br><span class="line">    count += 1</span><br></pre></td></tr></table></figure>
+
+<h3 id="lambda-匿名函数"><a href="#lambda-匿名函数" class="headerlink" title="lambda 匿名函数"></a>lambda 匿名函数</h3><p>lambda 参数：返回结果，用于代替简易函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f = lambda x,y :x*y	# f(x,y) = x*y</span><br></pre></td></tr></table></figure>
+
+<h3 id="id-取地址"><a href="#id-取地址" class="headerlink" title="id() 取地址"></a>id() 取地址</h3><p>id函数可以获得对象的内存地址，(ob1 is ob2) 等价于 (id(ob1) == id(ob2)) </p>
+<h3 id="range"><a href="#range" class="headerlink" title="range()"></a>range()</h3><ul>
+<li>range(start, stop[, step]), [ )，左闭右开特性</li>
+<li>range函数返回一个迭代器,该迭代器生成一个等差序列, 可重复使用</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">range(0, -10, -1) # 负数 [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]</span><br><span class="line">list(range(1, 11))	# 快捷创建列表</span><br></pre></td></tr></table></figure>
+
+<h3 id="map-映射"><a href="#map-映射" class="headerlink" title="map()  映射"></a>map()  映射</h3><ul>
+<li><p>map(func, iterable) 将输入iterable传入函数，返回 Iterator, 只可使用一次</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">m = map(lambda x:x*x,range(1,4))</span><br><span class="line">print(list(m))	# [1, 4, 9]</span><br><span class="line">list(map(str, [1, 2, 3]))	# [&#x27;1&#x27;,&#x27;2&#x27;,&#x27;3&#x27;], 将整数转化为字符串</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce()"></a>reduce()</h3><ul>
+<li>注意传入函数必须接受两个参数</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from functools import reduce</span><br><span class="line">reduce(lambda x, y: x+y, [1, 2, 3, 4]) # (((1+2)+3)+4)</span><br><span class="line">def str2int(s):</span><br><span class="line">    return reduce(lambda x, y: x * 10 + y, map(char2num, s))	# 字符串到整数的简洁实现</span><br></pre></td></tr></table></figure>
+
+<h3 id="sorted-排序"><a href="#sorted-排序" class="headerlink" title="sorted() 排序"></a>sorted() 排序</h3><ul>
+<li><p>通过指定key, reverse 获得自定义效果</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sorted([&#x27;bob&#x27;, &#x27;about&#x27;, &#x27;Zoo&#x27;, &#x27;Credit&#x27;], key=str.lower, reverse=True)</span><br><span class="line"># [&#x27;Zoo&#x27;, &#x27;Credit&#x27;, &#x27;bob&#x27;, &#x27;about&#x27;], 忽略大小写的反向排序</span><br><span class="line">sorted([36, 5, -12, 9, -21], key=abs) # [5, 9, -12, -21, 36], 按绝对值排序</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="filter-过滤"><a href="#filter-过滤" class="headerlink" title="filter() 过滤"></a>filter() 过滤</h3><ul>
+<li><p>传入返回bool的过滤函数与Iterable, 返回 Iterator, 只可使用一次</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list(filter(lambda x: x % 2==0,[1,2,3]))	# [2]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="dir-属性列表"><a href="#dir-属性列表" class="headerlink" title="dir() 属性列表"></a>dir() 属性列表</h3><ul>
+<li><p>返回一个包含字符串的list，为一个对象的所有属性和方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dir(&#x27;ABC&#x27;)	</span><br><span class="line"># [&#x27;__add__&#x27;, &#x27;__class__&#x27;,..., &#x27;__subclasshook__&#x27;, &#x27;capitalize&#x27;, &#x27;casefold&#x27;,..., &#x27;zfill&#x27;]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="len-长度"><a href="#len-长度" class="headerlink" title="len() 长度"></a>len() 长度</h3><ul>
+<li><p>本质为调用对象的<code>__len__</code>()方法, 自定义类若要能采用len(obj)获取长度就要编写<code>__len__</code>()方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">len(&#x27;ABC&#x27;) == &#x27;ABC&#x27;.__len__()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="循环的细节"><a href="#循环的细节" class="headerlink" title="循环的细节"></a>循环的细节</h2><h3 id="iter-与-next"><a href="#iter-与-next" class="headerlink" title="iter() 与 next()"></a>iter() 与 next()</h3><ul>
+<li><p>iter()函数获取 Iterable对象(list、tuple) 的迭代器。</p>
+<p>iter()函数实际上就是调⽤了 Iterable对象的 _ <em>iter</em> _ _  ⽅法</p>
+</li>
+<li><p>迭代器使⽤next()函数来获取下⼀条数据。</p>
+<p>迭代完成后抛出StopIteration 异常表示终止</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">li = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">li_iter = <span class="built_in">iter</span>(li)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(li_iter))	<span class="comment"># 1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(li_iter))	<span class="comment"># 2</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">next</span>(li_iter))	<span class="comment"># StopIteration</span></span><br><span class="line"><span class="comment"># next(iterator[,default]), default 为迭代器耗尽返回值，默认为StopIteration</span></span><br></pre></td></tr></table></figure></li>
+<li><p>for循环的本质</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">try: next()</span><br><span class="line">except StopIteration: break;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="Iterable-与-Iterator"><a href="#Iterable-与-Iterator" class="headerlink" title="Iterable  与 Iterator"></a>Iterable  与 Iterator</h3><ul>
+<li><p>list, tuple, str 为常见 Iterable 对象</p>
+</li>
+<li><p>某个对象只要有<code>__iter__</code>或<code>__getitem__</code>方法, 它就是Iterable的</p>
+</li>
+<li><p>Iterable对象需要实现<code>__iter__</code>方法返回一个迭代器</p>
+</li>
+<li><p>next()只作用于迭代器, 只有Iterable对象可使用for循环</p>
+</li>
+<li><p>迭代器一定Iterable, 但Iterable不一定是迭代器</p>
+</li>
+<li><p>迭代器有访问状态, 而Iterable对象没有</p>
+</li>
+<li><p>迭代器必须实现<code>__next__</code>和<code>__iter__</code>方法, 它的<code>__iter__</code>方法返回self </p>
+</li>
+<li><p>迭代器不会一次性把所有元素加载到内存中, 在调用<code>__next__</code>方法的时候才返回下一个元素</p>
+</li>
+<li><p>Iterable的判断</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from collections import Iterable</span><br><span class="line">isinstance(&#123;&#125;,Iterable)	# True </span><br><span class="line">isinstance(&#x27;sad&#x27;,Iterable)	# True</span><br></pre></td></tr></table></figure></li>
+<li><p>for 循环默认调用iter() 使得Iterable对象变为迭代器</p>
+</li>
+</ul>
+<h3 id="Yield-与-generator"><a href="#Yield-与-generator" class="headerlink" title="Yield 与 generator"></a>Yield 与 generator</h3><ul>
+<li>yield类似return,  使得函数可以作为迭代器使用，使得函数可使用next()</li>
+<li>含有yield的即为generator function，具有断点特性，generator function的“状态”会被冻结，所有的变量的值会被保留下来，之后执行的代码位置也会被记录，不会终止函数中的循环</li>
+<li>yield底层的实现是中断的原理，保存栈帧，加载栈帧, 消耗资源少</li>
+<li>可以通过对象获取数据；用多少取多少，节省内容空间。</li>
+<li>Yield是不能嵌套的！</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def foo():</span><br><span class="line">    while True:</span><br><span class="line">        res = yield &#x27;yyy&#x27;		# 包含yield关键字，就变成了生成器函数</span><br><span class="line">        print(&quot;res:&quot;, res)		# 中断使得无赋值，需要send()传入数据</span><br><span class="line">g = foo()</span><br><span class="line">print(next(g))	# yyy</span><br><span class="line">print(g.send(7))	# res: 7 \n yyy</span><br><span class="line">print(next(g))	# res: None \n yyy</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>调用generator function的返回值是一个generator类对象，generator可以多次返回。</p>
+</li>
+<li><p>generator实例在yield最后一个值 或者return之后就不能继续调用了</p>
+</li>
+<li><p>generator不立刻产生返回值，而是等到需要时才产生返回值，是一个主动拉取的过程(pull)</p>
+</li>
+<li><p>generator function中的return不能带返回值(old version)</p>
+</li>
+<li><p>只要把一个列表生成式的<code>[]</code>改成<code>()</code>，就创建了一个generator</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = (x * x for x in range(10))	# &lt;generator object &lt;genexpr&gt; at 0x1022ef630&gt;</span><br><span class="line">next(g) </span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数是对象、是变量，可以作为参数、可以是返回值</p>
+<h3 id="参数-与"><a href="#参数-与" class="headerlink" title="参数, * 与 **"></a>参数, * 与 **</h3><ul>
+<li>形参 = xx 即设定默认值</li>
+<li>*可以表示乘法，**表示乘方</li>
+<li>参数顺序为有名参数，有名有默认值参数，无名参数，关键字参数</li>
+<li>*args 表示任何多个无名参数，它本质是一个 tuple</li>
+<li>**kwargs 表示关键字参数，它本质上是一个 dict</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">def fun(name, *args, **kwargs):</span><br><span class="line">    print(&#x27;args=&#x27;, args)</span><br><span class="line">    print(&#x27;kwargs=&#x27;, kwargs)</span><br><span class="line"> </span><br><span class="line">fun(&#x27;tom&#x27;, 1, 2, 3, 4, A=&#x27;a&#x27;, B=&#x27;b&#x27;, C=&#x27;c&#x27;, D=&#x27;d&#x27;)</span><br><span class="line"># args= (1, 2, 3, 4)</span><br><span class="line"># kwargs= &#123;&#x27;A&#x27;: &#x27;a&#x27;, &#x27;B&#x27;: &#x27;b&#x27;, &#x27;C&#x27;: &#x27;c&#x27;, &#x27;D&#x27;: &#x27;d&#x27;&#125;</span><br><span class="line"></span><br><span class="line">#使用*args</span><br><span class="line">def fun(name, *args):</span><br><span class="line">	print(&#x27;你好:&#x27;, name)</span><br><span class="line">	for i in args:</span><br><span class="line">	print(&quot;你的宠物有:&quot;, i)</span><br><span class="line">fun(&quot;Geek&quot;, &quot;dog&quot;, &quot;cat&quot;)	</span><br><span class="line">你好: Geek</span><br><span class="line">你的宠物有: dog</span><br><span class="line">你的宠物有: cat</span><br><span class="line"></span><br><span class="line">#使用**kwargs</span><br><span class="line">def fun(**kwargs):</span><br><span class="line">	for key, value in kwargs.items():</span><br><span class="line">	print(&quot;&#123;0&#125; 喜欢 &#123;1&#125;&quot;.format(key, value))</span><br><span class="line">fun(Geek=&quot;cat&quot;, cat=&quot;box&quot;)</span><br><span class="line">Geek 喜欢 cat</span><br><span class="line">cat 喜欢 box</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>如果函数的形参是定长参数，也可以使用 *args 和 **kwargs 调用函数，类似对元组和字典进行解引用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def fun(data1, data2, data3):</span><br><span class="line">	print(&quot;data1: &quot;, data1)</span><br><span class="line"></span><br><span class="line">tup = (1,2,&#x27;12&#x27;)</span><br><span class="line">dic = &#123;&quot;data3&quot;: &quot;one&quot;, &quot;data2&quot;: 2, &quot;data1&quot;: 3&#125;</span><br><span class="line"></span><br><span class="line">fun(*tup) # data1:  one</span><br><span class="line">fun(**dic)	# data1:  3</span><br></pre></td></tr></table></figure></li>
+<li><p>*号也可以表示一个接受不定参数的list</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a, b, *c = 0, 1, 2, 3 # c = [2,3]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="嵌套与闭包"><a href="#嵌套与闭包" class="headerlink" title="嵌套与闭包"></a>嵌套与闭包</h3><ul>
+<li><p>返回一个内部定义的函数，每次调用都会返回一个新的函数，即使传入相同的参数</p>
+</li>
+<li><p>内部函数可引用外部函数变量, 形成闭包，闭包就是引用了自有变量的函数</p>
+</li>
+<li><p>返回函数不能涉及循环变量或会改变变量</p>
+</li>
+<li><p>如果不用nonlocal，内部函数会保存外部函数中的变量和参数，但是不能修改。nonlocal关键字声明的变量，它既不是局部变量，也不是全局变量，需要向上一层变量空间找这个变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def lazy_sum(*args): # 累加器</span><br><span class="line">    def sum():</span><br><span class="line">        ax = 0</span><br><span class="line">        for n in args:</span><br><span class="line">            ax = ax + n</span><br><span class="line">        return ax</span><br><span class="line">    return sum</span><br><span class="line">f = lazy_sum(1, 3, 5, 7, 9)</span><br><span class="line">f()	# 25 此时才正真计算</span><br><span class="line">f1 = lazy_sum(1, 3, 5, 7, 9) # f1 != f</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="函数装饰器"><a href="#函数装饰器" class="headerlink" title="函数装饰器"></a>函数装饰器</h3><ul>
+<li>在代码运行期间动态增加功能的方式，称之为“装饰器”（Decorator）</li>
+<li>decorator就是一个返回函数的高阶函数，为语法糖</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">def now():</span><br><span class="line">	print(&#x27;2015-3-25&#x27;)</span><br><span class="line">f = now()	#f.__name__ == now.__name__</span><br><span class="line"></span><br><span class="line"># log 为装饰器，添加一个函数日志</span><br><span class="line">def log(text):</span><br><span class="line">    def decorator(func):</span><br><span class="line">        def wrapper(*args, **kw):</span><br><span class="line">            print(&#x27;%s %s():&#x27; % (text, func.__name__))</span><br><span class="line">            return func(*args, **kw)</span><br><span class="line">        return wrapper</span><br><span class="line">    return decorator</span><br><span class="line">    </span><br><span class="line">@log(&#x27;execute&#x27;)</span><br><span class="line">def now():</span><br><span class="line">    print(&#x27;2015-3-25&#x27;)	</span><br><span class="line"># 等效于now = log(&#x27;execute&#x27;)(now)， now.__name__ == &#x27;warpper&#x27;</span><br><span class="line"># 可添加 @functools.wraps(fun) 防止函数名称改变</span><br></pre></td></tr></table></figure>
+
+<h3 id="偏函数"><a href="#偏函数" class="headerlink" title="偏函数"></a>偏函数</h3><ul>
+<li>把一个函数的某些参数给固定住，返回一个新的函数, 更简易的使用。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def int2(x, base=2):</span><br><span class="line">    return int(x, base)</span><br><span class="line">    </span><br><span class="line">import functools</span><br><span class="line">int2 = functools.partial(int, base=2)</span><br><span class="line"></span><br><span class="line">max2 = functools.partial(max, 10)</span><br><span class="line">max2(5, 6, 7)	# 10, 默认多传了一个10进去</span><br></pre></td></tr></table></figure>
+
+<h3 id="global"><a href="#global" class="headerlink" title="global"></a>global</h3><p>使用global 关键字使得函数使用外界变量</p>
+<figure class="highlight plaintext"><figcaption><span>x</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x = 1</span><br><span class="line">def func():</span><br><span class="line">	global x</span><br><span class="line">    x = 2</span><br><span class="line">func()</span><br><span class="line">print(x)	# 2</span><br></pre></td></tr></table></figure>
+
+<p>def func():<br>  x = 2</p>
+<p>func()<br>print(x)</p>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><p>第一个参数必须为self, Python解释器自己会把实例变量传进去</p>
+<p>类中直接定义属性属于所有类，每个实例的同名属性会覆盖类的属性, 注意区分</p>
+<p>可以随时对实例或类模板添加新属性和方法, 动态语言的优势</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Dog(object): </span><br><span class="line">	name = &#x27;tom&#x27;</span><br><span class="line">    def __init__(self,name,dog_type):</span><br><span class="line">        self.name = name</span><br><span class="line">       </span><br><span class="line">d=Dog(&#x27;pick&#x27;)</span><br><span class="line">d.name	# pick</span><br><span class="line">Dog.name	# tom</span><br><span class="line">del(d.name)</span><br><span class="line">d.name	# tom</span><br><span class="line">d.age = 1	# 直接添加新属性</span><br></pre></td></tr></table></figure>
+
+<h3 id="限制访问"><a href="#限制访问" class="headerlink" title="限制访问"></a>限制访问</h3><ul>
+<li><p>python 类中变量默认为public，可直接调用修改</p>
+</li>
+<li><p>加两个下划线可变为private, 注意语法不允许后缀也添加两个下划线</p>
+</li>
+<li><p>加一个下划线则可变为protect, 只允许其本身与子类进行访问，不能用于 from module import *</p>
+</li>
+<li><p>仍可通过_ 类名 _ _ 属性 直接访问，如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Dog(object):       </span><br><span class="line">    def __init__(self,name,dog_type): </span><br><span class="line">        self.__name = name</span><br><span class="line">        self.__type = dog_type</span><br><span class="line">d = Dog()</span><br><span class="line">d._Dog__name # 仍可通过此方式直接访问</span><br><span class="line">d.__name = &#x27;New Name&#x27; # 这种写法改变不了属性，而是添加了一个新的public属性</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="多态与继承"><a href="#多态与继承" class="headerlink" title="多态与继承"></a>多态与继承</h3><p>python 可以同时继承多个类，而java只能继承一个类</p>
+<p>动态语言的鸭子类型特点决定了继承不像静态语言那样是必须的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class Dog(Animal):	# 继承animal 类</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>使用函数判断类信息与性质, 处理复杂情况</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">getattr(obj, &#x27;power&#x27;) # 获取属性&#x27;power&#x27;,若无,抛出AttributeError</span><br><span class="line">getattr(obj, &#x27;power&#x27;，404) # 获取属性&#x27;power&#x27;,若无,返回404</span><br><span class="line">hasattr(obj, &#x27;power&#x27;) # 有属性&#x27;power&#x27;吗,返回T/F</span><br><span class="line">setattr(obj, &#x27;y&#x27;, 19) # 设置一个属性&#x27;y&#x27;=19</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="slots-限制绑定"><a href="#slots-限制绑定" class="headerlink" title="__slots__限制绑定"></a><code>__slots__</code>限制绑定</h3><ul>
+<li><p><code>__slots__</code>限定可以动态绑定的方法</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Student(object):</span><br><span class="line">    __slots__ = (&#x27;name&#x27;, &#x27;age&#x27;) # 用tuple定义允许绑定的属性名称</span><br><span class="line">s = Student() # 创建新的实例</span><br><span class="line">s.score = 99 # 绑定属性&#x27;score&#x27; AttributeError: &#x27;Student&#x27; object has no attribute &#x27;score&#x27;</span><br></pre></td></tr></table></figure></li>
+<li><p><code>__slots__</code>定义的属性仅对当前类实例起作用，对继承的子类不起作用</p>
+</li>
+</ul>
+<h3 id="str-与-repr-打印类信息"><a href="#str-与-repr-打印类信息" class="headerlink" title="__str__ ()与 __repr__()打印类信息"></a><code>__str__</code> ()与 <code>__repr__</code>()打印类信息</h3><ul>
+<li><code>__str__</code>()返回用户看到的字符</li>
+<li><code>__repr__</code>()返回程序开发者看到的字符串, 为调试服务</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Student(object):</span><br><span class="line">	def __init__(self, name):</span><br><span class="line">		self.name = name</span><br><span class="line">	def __str__(self):</span><br><span class="line">		return &#x27;Student object &#x27; + self.name</span><br><span class="line">print(Student(&#x27;Michael&#x27;))</span><br><span class="line"># Student object Michael</span><br><span class="line"># 若不定义 __str__, 则输出&lt;__main__.Student object at 0x109afb310&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="iter-next-可迭代类"><a href="#iter-next-可迭代类" class="headerlink" title="__iter__() , __next__() 可迭代类"></a><code>__iter__</code>() , <code>__next__</code>() 可迭代类</h3><ul>
+<li><p>定义使得类可进入for循环，<code>__iter__</code>()返回一个迭代对象</p>
+</li>
+<li><p>for循环就会不断调用该迭代对象的<code>__next__()</code>方法拿到循环的下一个值，直到遇到<code>StopIteration</code>错误时退出循环。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Fib(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.a, self.b = 0, 1 # 初始化两个计数器a，b</span><br><span class="line"></span><br><span class="line">    def __iter__(self):</span><br><span class="line">        return self # 实例本身就是迭代对象，故返回自己</span><br><span class="line"></span><br><span class="line">    def __next__(self):</span><br><span class="line">        self.a, self.b = self.b, self.a + self.b # 计算下一个值</span><br><span class="line">        if self.a &gt; 100000: # 退出循环的条件</span><br><span class="line">            raise StopIteration()</span><br><span class="line">        return self.a # 返回下一个值</span><br><span class="line">for n in Fib():</span><br><span class="line">	print(n)	#1 1 2...</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="call-函数化"><a href="#call-函数化" class="headerlink" title="__call__() 函数化"></a><code>__call__</code>() 函数化</h3><ul>
+<li><p>使得可以像使用函数一样使用实例，定义了<code>__call__</code>()的类为callable对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class Student(object):</span><br><span class="line">    def __init__(self, name):</span><br><span class="line">        self.name = name</span><br><span class="line">    def __call__(self):</span><br><span class="line">        print(self.name)</span><br><span class="line">s = Student(&#x27;Michael&#x27;)</span><br><span class="line">s()	# self参数不要传入,输出Michael.</span><br></pre></td></tr></table></figure></li>
+<li><p>通过 callable() 函数，可判断一个对象是否是 callable</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">callable(Student())	# True</span><br><span class="line">callable(&#x27;str&#x27;)	# False</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="getitem-getattr"><a href="#getitem-getattr" class="headerlink" title="__getitem__ (), __getattr__()"></a><code>__getitem__</code> (), <code>__getattr__</code>()</h3><ul>
+<li><p><code>__getitem__</code>() 的合理定义使得类可以像list一样取下标或者切片</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Fib(object):</span><br><span class="line">    def __getitem__(self, n):</span><br><span class="line">        if isinstance(n, int): # n是索引</span><br><span class="line">            a, b = 1, 1</span><br><span class="line">            for x in range(n):</span><br><span class="line">                a, b = b, a + b</span><br><span class="line">            return a</span><br><span class="line">        if isinstance(n, slice): # n是切片</span><br><span class="line">            start = n.start</span><br><span class="line">            stop = n.stop</span><br><span class="line">            if start is None:</span><br><span class="line">                start = 0</span><br><span class="line">            a, b = 1, 1</span><br><span class="line">            L = []</span><br><span class="line">            for x in range(stop):</span><br><span class="line">                if x &gt;= start:</span><br><span class="line">                    L.append(a)</span><br><span class="line">                a, b = b, a + b</span><br><span class="line">            return L</span><br></pre></td></tr></table></figure></li>
+<li><p><code>__getattr__</code>() 使得调用不存在的属性时弥补输入，默认返回None</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Student(object):</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.name = &#x27;Michael&#x27;</span><br><span class="line"></span><br><span class="line">    def __getattr__(self, attr):</span><br><span class="line">        if attr==&#x27;score&#x27;:</span><br><span class="line">            return 99</span><br><span class="line">s = Student()</span><br><span class="line">s.score	# 99</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="len-长度接口"><a href="#len-长度接口" class="headerlink" title="__len__() 长度接口"></a><code>__len__</code>() 长度接口</h3><ul>
+<li>详见 len()函数</li>
+</ul>
+<h3 id="property属性化类装饰器"><a href="#property属性化类装饰器" class="headerlink" title="@property属性化类装饰器"></a>@property属性化类装饰器</h3><ul>
+<li><p>通过使用类装饰器 @property，使得方法可以和属性一样使用，还会创建一个修改的setter,可提供提醒和安全范围</p>
+</li>
+<li><p>若不定义setter，则成为一个只读属性，需要前提，如下面的age</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Student(object):</span><br><span class="line">    @property</span><br><span class="line">    def score(self):</span><br><span class="line">        return self._score</span><br><span class="line"></span><br><span class="line">    @score.setter</span><br><span class="line">    def score(self, value):</span><br><span class="line">        if not isinstance(value, int):</span><br><span class="line">            raise ValueError(&#x27;score must be an integer!&#x27;)</span><br><span class="line">        if value &lt; 0 or value &gt; 100:</span><br><span class="line">            raise ValueError(&#x27;score must between 0 ~ 100!&#x27;)</span><br><span class="line">        self._score = value</span><br><span class="line">        </span><br><span class="line">    @property		# 只读属性，通过_score确定</span><br><span class="line">    def age(self):</span><br><span class="line">        return 2015 - self._score</span><br><span class="line">        </span><br><span class="line">s = Stucent</span><br><span class="line">s.score = 60 # OK，实际转化为s.set_score(60)</span><br><span class="line">s.score = 9999	# ValueError: score must between 0 ~ 100!, 使用@score.setter</span><br></pre></td></tr></table></figure></li>
+<li><p>通过定义为self. _ image, 可以防止外界修改, 隐藏真实属性名字，又可直接调用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class DataSet(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.__labels = 2 #定义属性的名称</span><br><span class="line">    @property</span><br><span class="line">    def labels(self):</span><br><span class="line">        return self.__labels</span><br><span class="line">#方法加入@property后，这个方法相当于一个属性，这个属性可以让用户进行使用，而且用户有没办法随意修改。</span><br><span class="line">d = DataSet()</span><br><span class="line">#用户进行属性调用的时候，直接调用images即可，而不用知道属性名_images，因此用户无法更改属性，从而保护了类的属性。</span><br><span class="line">print(d.labels)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="abc-abstractmethod-抽象类装饰器"><a href="#abc-abstractmethod-抽象类装饰器" class="headerlink" title="@abc .abstractmethod 抽象类装饰器"></a>@abc .abstractmethod 抽象类装饰器</h3><ul>
+<li>声明抽象基类，不可以被实例化，且子类必须实现其方法、</li>
+<li>@abc .abstractmethod 表明抽象方法的生成器</li>
+<li>@abc.abstractproperty表明一个抽象属性</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import abc</span><br><span class="line">class A(metaclass=abc.ABCMeta):</span><br><span class="line">	# 利用装饰器修饰greet()</span><br><span class="line">    @abc.abstractmethod</span><br><span class="line">    def greet(self):</span><br><span class="line">        print(&quot;hell world&quot;)</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<h2 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h2><ul>
+<li>每个常量都是class的一个唯一实例</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from enum import Enum</span><br><span class="line">Month = Enum(&#x27;Month&#x27;, (&#x27;Jan&#x27;, &#x27;Feb&#x27;, &#x27;Mar&#x27;, &#x27;Apr&#x27;))</span><br><span class="line">Month.Jan</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>枚举枚举类成员</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for name, member in Month.__members__.items():</span><br><span class="line">    print(name, &#x27;=&gt;&#x27;, member, &#x27;,&#x27;, member.value)</span><br></pre></td></tr></table></figure></li>
+<li><p>使用@unique装饰器继承enum, 自定义枚举类</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">from enum import Enum, unique</span><br><span class="line">@unique</span><br><span class="line">class Weekday(Enum):</span><br><span class="line">    Sun = 0 # Sun的value被设定为0</span><br><span class="line">    Mon = 1</span><br><span class="line">    Tue = 2</span><br><span class="line">print(Weekday[&#x27;Tue&#x27;])	# Weekday.Tue</span><br><span class="line">print(Weekday.Tue)	# Weekday.Tue</span><br><span class="line">print(Weekday.Tue.value)	# 2</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="纠错机制"><a href="#纠错机制" class="headerlink" title="纠错机制"></a>纠错机制</h2><h3 id="try"><a href="#try" class="headerlink" title="try"></a>try</h3><ul>
+<li>如果错误没有被捕获，它就会一直往上抛，最后被Python解释器捕获，打印一个错误信息，然后程序退出。</li>
+<li>类似栈的报错机制使得通常最下一行才是真实错误</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">    r = 10 / int(&#x27;2&#x27;)</span><br><span class="line">    print(&#x27;result:&#x27;, r)</span><br><span class="line">except ValueError as e:</span><br><span class="line">    print(&#x27;ValueError:&#x27;, e)</span><br><span class="line">except ZeroDivisionError as e:		# 注意类之间的继承机制，导致一些后捕获的子类异常不可能生效</span><br><span class="line">    print(&#x27;ZeroDivisionError:&#x27;, e)</span><br><span class="line">else:					# 若没有异常</span><br><span class="line">    print(&#x27;no error!&#x27;)</span><br><span class="line">finally:</span><br><span class="line">    print(&#x27;finally...&#x27;)</span><br><span class="line">print(&#x27;END&#x27;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过raise 语句可主动抛出错误</li>
+<li>三引号可作为文档测试内容</li>
+</ul>
+<h2 id="Other-Details"><a href="#Other-Details" class="headerlink" title="Other  Details"></a>Other  Details</h2><ul>
+<li><p>input()输入信息流</p>
+</li>
+<li><p>定义程序入口，文件作为脚本直接运行时才可用，而被 import 到其他脚本中时不执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if __name__ == &#x27;__main__&#x27;: </span><br><span class="line"># &#x27;__main__&#x27; 即为当前文件名，如 test.py, __name__直接执行时为 test.py, 被Import时为test, 无后缀</span><br></pre></td></tr></table></figure></li>
+<li><p>使用 pass 作为空语句跳过没写完的部分</p>
+</li>
+<li><p>-&gt; 符号表明函数的返回值为类型, 并非必要</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def attrs(self) -&gt; _Attrs:</span><br><span class="line">	pass</span><br><span class="line"># -&gt; _Attr表明函数返回的是一个外部可访问的类的私有变量</span><br></pre></td></tr></table></figure></li>
+<li><p>3连判断</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = 1 if a&lt;b else b</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/17/Python-revise/" data-id="ckosef9zm000398j684v16m8a" data-title="Python revise" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/7/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 15px;">C</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/05/17/Cpp-revise/">Cpp revise</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/C-revise/">C revise</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/Shell-%E7%BC%96%E7%A8%8B/">Shell 编程</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/vim%E7%BC%96%E8%BE%91%E5%99%A8/">vim编辑器</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/Linux-%E6%8C%87%E4%BB%A4/">Linux 指令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Bullet37<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

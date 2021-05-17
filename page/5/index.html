@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Note Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Note Blog">
+<meta property="og:url" content="http://example.com/page/5/index.html">
+<meta property="og:site_name" content="Note Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Bullet37">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Note Blog" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Note Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Linux-指令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/05/17/Linux-%E6%8C%87%E4%BB%A4/" class="article-date">
+  <time class="dt-published" datetime="2021-05-17T09:31:55.000Z" itemprop="datePublished">2021-05-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/05/17/Linux-%E6%8C%87%E4%BB%A4/">Linux 指令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="Linux-指令"><a href="#Linux-指令" class="headerlink" title="Linux 指令"></a>Linux 指令</h1><h2 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h2><h3 id="命令提示符"><a href="#命令提示符" class="headerlink" title="命令提示符"></a>命令提示符</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>root 位置表示当前用户名</li>
+<li>~ 表示根目录，超级用户的家目录：/root，普通用户的家目录：/home/用户名</li>
+<li>./ 和 . 开头表示当前工作目录，对于shell脚本不同，一般用./开启新脚本环境</li>
+<li>../ 开头表示上一级目录</li>
+<li>/ 开头表示绝对路径</li>
+<li>#为超级用户提示符，$为普通用户提示符</li>
+</ul>
+<h3 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# 命令[选项][参数]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Linux 的选项又分为短格式选项（-l）和长格式选项（–all）,短格式前缀一个 - ，可多个连用如-al， 长格式前缀两个-,一次只能指定一个</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#ls -l</span><br><span class="line">[root@localhost ~]#ls --all</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>命令后加 –help 显示用法</li>
+</ul>
+<h2 id="显示状况"><a href="#显示状况" class="headerlink" title="显示状况"></a>显示状况</h2><h3 id="pwd-显示路径"><a href="#pwd-显示路径" class="headerlink" title="pwd 显示路径"></a>pwd 显示路径</h3><ul>
+<li>无参数，打印当前路径</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#pwd</span><br></pre></td></tr></table></figure>
+
+<h3 id="ls-显示目录"><a href="#ls-显示目录" class="headerlink" title="ls 显示目录"></a>ls 显示目录</h3><ul>
+<li><p>ls -a 列出文件下所有的文件，包括以“.“开头的隐藏文件</p>
+</li>
+<li><p>ls -l 列出文件的详细信息，如创建者，创建时间，文件的读写权限列表</p>
+</li>
+<li><p>ls -S 以文件的大小进行排序列出</p>
+</li>
+<li><p>ls -d 只显示当前文件夹</p>
+</li>
+<li><p>ls -s 在每个文件的后面打印出文件的大小(size) </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#ls -la ~</span><br></pre></td></tr></table></figure></li>
+<li><p>计算当前目录下的文件数量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#ls -|*|grep &quot;^-&quot;| wc -|</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="ll-显示所有文件"><a href="#ll-显示所有文件" class="headerlink" title="ll 显示所有文件"></a>ll 显示所有文件</h3><ul>
+<li>基本等同于ls -al, 输出包括隐藏文件的详细信息</li>
+</ul>
+<h3 id="cd-更改目录"><a href="#cd-更改目录" class="headerlink" title="cd 更改目录"></a>cd 更改目录</h3><ul>
+<li>通过~直接返回家目录</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#cd ~</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>跳转至家目录</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#cd \S</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>返回上两级目录</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#cd .../</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="lsblk-列出块设备"><a href="#lsblk-列出块设备" class="headerlink" title="lsblk 列出块设备"></a>lsblk 列出块设备</h3><ul>
+<li>树状输出格式显示块设备,可用于查看插入usb名称</li>
+<li>lsblk -l命令以列表格式显示块设备(而不是树状格式)</li>
+</ul>
+<h3 id="man-查看帮助手册"><a href="#man-查看帮助手册" class="headerlink" title="man 查看帮助手册"></a>man 查看帮助手册</h3><ul>
+<li>查看命令的使用方法</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#man tar</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装中文man手册并添加库函数手册</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#sudo apt-get install manpages-zh manpages-dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="clear-清屏"><a href="#clear-清屏" class="headerlink" title="clear 清屏"></a>clear 清屏</h3><p>ctrl+L 也可清除终端信息，ctrl+u 删除光标前，ctrl+k 删除光标后</p>
+<h2 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h2><h3 id="mkdir-创建文件夹"><a href="#mkdir-创建文件夹" class="headerlink" title="mkdir 创建文件夹"></a>mkdir 创建文件夹</h3><ul>
+<li>-m 选项可以指定创建目录的权限</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#mkdir -m 744 hello</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-p 创建多级目录</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#mkdir -p test/dir1/dir2</span><br></pre></td></tr></table></figure>
+
+<h3 id="ln-创建链接"><a href="#ln-创建链接" class="headerlink" title="ln 创建链接"></a>ln 创建链接</h3><ul>
+<li>-s创建软连接，-l创建硬链接</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#ln -s a.py b.py</span><br><span class="line">[root@localhost ~]#ln -l a.py b.py</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>软链接可以对一个不存在的文件名进行链接，而硬链接不允许</li>
+<li>软链接可以对目录进行链接，而硬链接不可以</li>
+<li>软链接可以跨文件系统 ，硬链接不可以</li>
+</ul>
+<h3 id="touch-创建文件-amp-更改文件日期"><a href="#touch-创建文件-amp-更改文件日期" class="headerlink" title="touch 创建文件&amp;更改文件日期"></a>touch 创建文件&amp;更改文件日期</h3><ul>
+<li>-t 修改文件时间，格式为[YYMMDDhhmm]，如将日期改为2007/09/15 2:02</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#touch -t 0709150202 bashrc</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-d修改日期,如将文件日期调整为两天前</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#touch -d &quot;2 days ago&quot; bashrc</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建文件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#touch test.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="cp-复制文件-文件夹"><a href="#cp-复制文件-文件夹" class="headerlink" title="cp 复制文件/文件夹"></a>cp 复制文件/文件夹</h3><ul>
+<li>-r 复制文件夹, 结尾/ 非必须，仅表示为文件夹</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#cp -r srcDir/ desDir/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可同时复制多个文件到一个文件夹，注意最后一个为目的文件夹</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#cp -r 1.txt 2.txt desDir/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>-u 只有源文件较目标文件新时复制, 更新文件使用，不会出错</li>
+<li>-s 创建文件的软链接</li>
+<li>-l 创建文件的硬链接，软连接文件和被链接文件拥有的inode不相同，硬链接文件和被链接的文件拥有相同的inode。当被链接的文件删除时，软链接文件无法访问，而硬链接文件仍能正常访问。</li>
+</ul>
+<h3 id="mv-移动文件"><a href="#mv-移动文件" class="headerlink" title="mv 移动文件"></a>mv 移动文件</h3><ul>
+<li>视mv命令中第二个参数类型的不同（目标文件or目标目录），mv命令将文件重命名或将其移至一个新的目录中。当第二个参数类型是文件时，mv命令完成文件重命名，此时，源文件只能有一个，它将所给的源文件或目录重命名为给定的目标文件名。当第二个参数是已存在的目录名称时，源文件或目录参数可以有多个，mv命令将各参数指定的源文件均移至目标目录中。在跨文件系统移动文件时，mv先拷贝，再将原有文件删除，而链至该文件的链接也将丢失。</li>
+<li>-b  backup 若需覆盖文件，则覆盖前先行备份</li>
+<li>-f  force，如果目标文件已经存在，不会询问而直接覆盖 </li>
+<li>-i 若目标文件已经存在,询问是否覆盖</li>
+<li>-u 更新(update)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#mv src_file /root/des/</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="rm-移除文件"><a href="#rm-移除文件" class="headerlink" title="rm 移除文件"></a>rm 移除文件</h3><ul>
+<li>-f ，强制删除，忽略不存在的文件，从不给出提示</li>
+<li>-r &amp;-R, 递归的删除目录下面文件以及子目录下文件</li>
+<li>-i (interact), 删除前给出提示，默认</li>
+<li>-v, 显示运行时详细信息</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#rm -rf</span><br><span class="line">[root@localhost ~]#rm -f empty/</span><br></pre></td></tr></table></figure>
+
+<h3 id="find-查找文件"><a href="#find-查找文件" class="headerlink" title="find 查找文件"></a>find 查找文件</h3><ul>
+<li>-name 名称模糊搜素，-type (f:文件 d:文件夹),-size指定搜素大小，-perm按权限搜素</li>
+<li>在 /logs 目录中查找更改时间在5日以前的文件并删除它们</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#/find logs -type f -mtime +5 -exec   -ok   rm &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查找比 aa.txt 旧的文件 </li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#find . ! -newer &quot;aa.txt&quot; -type f -print </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查找超过1M的文件:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#find / -size +1M -type f -print 　　</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查找 del.txt 并删除，删除前提示确认 </li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# find . -name &#x27;del.txt&#x27; -ok rm &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+
+<h3 id="grep-文本内搜索"><a href="#grep-文本内搜索" class="headerlink" title="grep 文本内搜索"></a>grep 文本内搜索</h3><ul>
+<li>-E 正则匹配，-F 字符串匹配，-y 忽略字符大小写，-p匹配段落</li>
+<li>搜素特定进程：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# ps -ef | grep in.telnetd</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>搜素b开头的行：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#more size.txt | grep &#x27;[b]&#x27;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="cat-查看文件"><a href="#cat-查看文件" class="headerlink" title="cat 查看文件"></a>cat 查看文件</h3><ul>
+<li><p>cat 是一个文本文件查看和连接工具</p>
+</li>
+<li><p>-b对非空行输出行号，-n 输出所有行号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#cat -b test.txt</span><br><span class="line">	1 aaa</span><br><span class="line"></span><br><span class="line">	2 bbb</span><br></pre></td></tr></table></figure></li>
+<li><p>-e显示结尾，以$号表示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#cat -e test.txt</span><br><span class="line">aaa$</span><br><span class="line">$</span><br><span class="line">bbb$</span><br></pre></td></tr></table></figure></li>
+<li><p>可使用cat 合并/排序/去重文件，&gt;表示覆盖，&gt;&gt;表示追加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#cat 1.txt 2.txt &gt;3.txt</span><br><span class="line">[root@localhost ~]#cat  1 2 | sort | uniq</span><br><span class="line">[root@localhost ~]#cat file1 file2 | sort | uniq &gt; file3</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="wc-文件信息"><a href="#wc-文件信息" class="headerlink" title="wc 文件信息"></a>wc 文件信息</h3><ul>
+<li>-c 显示字节数，-w显示词数，-l 显示行数，-m显示字符和文件名</li>
+<li>如下为7行，70字节，8个词的test.txt</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]## wc -m test.txt </span><br><span class="line">70 test.txt</span><br><span class="line">[root@localhost ~]## wc -m test.txt </span><br><span class="line"> 7  8 70 test.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="vim-查看文件"><a href="#vim-查看文件" class="headerlink" title="vim 查看文件"></a>vim 查看文件</h3><ul>
+<li>详见vim.md</li>
+</ul>
+<h3 id="其他查看文件方式"><a href="#其他查看文件方式" class="headerlink" title="其他查看文件方式"></a>其他查看文件方式</h3><ul>
+<li><p>head 默认打印文件头10行，-c 指定字节数，-n指定行数 ,-v显示文件名-q不显示</p>
+<p>显示至倒数 100个字符</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#head -c 100 test.txt</span><br></pre></td></tr></table></figure>
+
+<p>显示前11行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#head -n 11 test.txt</span><br></pre></td></tr></table></figure></li>
+<li><p>tail 默认显示文件尾10行，参数与head类似，-f 查看动态变化</p>
+<p>显示文件最后100个字符:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#tail -c 100 test.txt</span><br></pre></td></tr></table></figure></li>
+<li><p>less -f 强制打开文件，-s合并连续空行 </p>
+<p>空格下一屏，按b上一屏, 按q 退出，/c向下搜素c，?c向上搜素c, PgUp/Down换行</p>
+</li>
+<li><p>more 按页显示文字，-c 清屏显示，-n指定开始行,+num从num行开始，-num 每屏显示num行</p>
+<p>空格下一屏，按b上一屏, 按q 退出</p>
+<p>从第5行开始显示test.txt,每屏10行：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#more +5 -10 test.txt</span><br></pre></td></tr></table></figure></li>
+<li><p>tac : cat 反过来的输出方式，从最后一行输出到第一行</p>
+</li>
+</ul>
+<h2 id="Linux-文件权限-amp-文件时间"><a href="#Linux-文件权限-amp-文件时间" class="headerlink" title="Linux 文件权限&amp;文件时间"></a>Linux 文件权限&amp;文件时间</h2><h3 id="文件时间"><a href="#文件时间" class="headerlink" title="文件时间"></a>文件时间</h3><ul>
+<li>mtime (modification time) 当文件“内容数据”（只文件里面的内容，而不是属性或权限）更改时更新, 为ls默认显示时间</li>
+<li>ctime(status time) 当文件的“状态”（权限或者属性）改变时更新</li>
+<li>atime (access time) 当“该文件内容被取用”（如使用cat读取）时更新</li>
+<li>ls默认情况下显示mtime</li>
+</ul>
+<h3 id="文件权限"><a href="#文件权限" class="headerlink" title="文件权限"></a>文件权限</h3><ul>
+<li>开头： - 为文件，d为文件夹，l 为链接，b为USB，c为一次性内存</li>
+<li>3个一组，分别表示所有者，同组成员，其他成员所拥有的权限</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drwxrwx--x owner group  2021-4-12 11:11 test.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>r: (4)可读，w: (2)可写， x: (1)可执行，- :(0)无权限, 777表示所有的最大权限(4+1+2=7)</li>
+</ul>
+<h3 id="chmod-更改权限"><a href="#chmod-更改权限" class="headerlink" title="chmod 更改权限"></a>chmod 更改权限</h3><ul>
+<li><p>chmod [who] [+ | - | =] [mode] 文件名</p>
+</li>
+<li><p>who:</p>
+<p>u  , user，文件或目录的所有者。<br>g , group, 同组用户，即与user有相同组ID的所有用户。<br>o  , others,其他用户<br>a  , all 所有用户”，包括u、g、o，为默认值</p>
+</li>
+<li><p>+为增加权限，- 取消权限，= 重分配权限</p>
+</li>
+<li><p>如下给其他用户增加读权限，取消组用户的写权限</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#chmod o+r, g-w test.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>常用为数字模式，只有 -r 递归处理参数:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#chmod -r 777 test/</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="系统操作"><a href="#系统操作" class="headerlink" title="系统操作"></a>系统操作</h2><h3 id="df-查看磁盘空间"><a href="#df-查看磁盘空间" class="headerlink" title="df 查看磁盘空间"></a>df 查看磁盘空间</h3><ul>
+<li>基于文件系统总体来计算，通过文件系统中未分配空间来确定系统中已经分配空间的大小</li>
+<li>-a,显示全部的档案系统和各分割区的磁盘使用情形</li>
+<li>-h, 以更易读方式输出, -l 仅输出本地， </li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#df -h</span><br><span class="line">文件系统              容量  已用 可用 已用% 挂载点</span><br><span class="line">/dev/cciss/c0d0p1     2.0G  598M  1.3G  32% /</span><br></pre></td></tr></table></figure>
+
+<h3 id="du-查看文件真实内存"><a href="#du-查看文件真实内存" class="headerlink" title="du 查看文件真实内存"></a>du 查看文件真实内存</h3><ul>
+<li><p>面向文件的命令, 只计算被文件占用的空间, 不计算文件系统metadata 占用的空间</p>
+</li>
+<li><p>-a 显示全部，-s (summary)显示简化，常用du -sh</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# du -ah test</span><br><span class="line">4.0K    test/mysql.php</span><br></pre></td></tr></table></figure>
+
+<h3 id="free-查看剩余空间"><a href="#free-查看剩余空间" class="headerlink" title="free 查看剩余空间"></a>free 查看剩余空间</h3><ul>
+<li>-b 以字节单位，-k以kb单位，-m以mb单位，-g gb单位，-h 易读性输出</li>
+<li>total = used + free</li>
+</ul>
+<h3 id="ps-查看服务进程"><a href="#ps-查看服务进程" class="headerlink" title="ps 查看服务进程"></a>ps 查看服务进程</h3><ul>
+<li><p>ps显示瞬间进程状态，并不动态连续；如果想对进程进行实时监控应该用top命令</p>
+</li>
+<li><p>PPID: parent process id, TTY: 终端设备，CMD：进程路径，grep等命令会产生进程</p>
+</li>
+<li><p>-e -a 显示所有进程，-f 显示完整输出，-l 较长详细格式</p>
+</li>
+<li><p>查找进程：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#ps aux|grep mysql</span><br></pre></td></tr></table></figure></li>
+<li><p>查看有哪些服务</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#ls -l /etc/init.d/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>显示所有进程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#ps -ef</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="kill-终止进程"><a href="#kill-终止进程" class="headerlink" title="kill 终止进程"></a>kill 终止进程</h3><ul>
+<li>可通过pgrep直接筛选要删除的进程</li>
+<li>可通过进程名字或者pid杀死进程</li>
+<li>-9 尽快杀死所有进程, 如下杀所有python 进程</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#killall -9 python</span><br></pre></td></tr></table></figure>
+
+<h3 id="service-进程管理"><a href="#service-进程管理" class="headerlink" title="service 进程管理"></a>service 进程管理</h3><ul>
+<li> service  服务名 [start | stop | restart | reload | status]</li>
+<li> 关闭防火墙,立即生效：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#service iptables stop</span><br><span class="line">[root@localhost ~]#service network restart</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>开启secure shell</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#service sshd start</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="用户操作"><a href="#用户操作" class="headerlink" title="用户操作"></a>用户操作</h2><h3 id="top-实时查看用户进程"><a href="#top-实时查看用户进程" class="headerlink" title="top 实时查看用户进程"></a>top 实时查看用户进程</h3><p>PID — 进程id<br>USER — 进程所有者<br>PR — 进程优先级<br>NI — nice值。负值表示高优先级，正值表示低优先级<br>VIRT — 进程使用的虚拟内存总量，单位kb。VIRT=SWAP+RES<br>RES — 进程使用的、未被换出的物理内存大小，单位kb。RES=CODE+DATA<br>SHR — 共享内存大小，单位kb<br>S — 进程状态。D=不可中断的睡眠状态 R=运行 S=睡眠 T=跟踪/停止 Z=僵尸进程<br>%CPU — 上次更新到现在的CPU时间占用百分比<br>%MEM — 进程使用的物理内存百分比<br>TIME+ — 进程使用的CPU时间总计，单位1/100秒<br>COMMAND — 进程名称（命令名/命令行）</p>
+<ul>
+<li><p>-u指定用户名，-d设置刷新延迟，-p指定查看进程，-n打印几次</p>
+</li>
+<li><p>-M按内存排序显示，-P CPU使用率排序，- I 多cpu交替显示</p>
+</li>
+<li><p>实际内存=RES - SHR</p>
+</li>
+<li><p>更新延时设置为5秒（默认3秒）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#top -d 5</span><br></pre></td></tr></table></figure></li>
+<li><p>只查看用户名为mysql的进程:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#top -u mysql</span><br></pre></td></tr></table></figure></li>
+<li><p>只查看进程200和2000:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#top -p 200, 2000</span><br></pre></td></tr></table></figure></li>
+<li><p>可以动态交互，如Shift+p，按CPU排序</p>
+</li>
+</ul>
+<h3 id="whoami-查看当前用户"><a href="#whoami-查看当前用户" class="headerlink" title="whoami 查看当前用户"></a>whoami 查看当前用户</h3><ul>
+<li>常用于shell编程中</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# whoami</span><br><span class="line">root</span><br></pre></td></tr></table></figure>
+
+<h3 id="hostname-输出操作主机名"><a href="#hostname-输出操作主机名" class="headerlink" title="hostname  输出操作主机名"></a>hostname  输出操作主机名</h3><ul>
+<li>主机名保存在/etc/hostname，可修改更改静态主机名，hostname改名暂时</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#hostname -f Full_Qualified_Domain_Name</span><br></pre></td></tr></table></figure>
+
+<h3 id="id-显示Uid和Gid"><a href="#id-显示Uid和Gid" class="headerlink" title="id 显示Uid和Gid"></a>id 显示Uid和Gid</h3><ul>
+<li>-a 显示所有用户，-g输出有效组id</li>
+<li>用户信息在 etc/passwd/ 文件下</li>
+</ul>
+<h3 id="uname-系统信息"><a href="#uname-系统信息" class="headerlink" title="uname 系统信息"></a>uname 系统信息</h3><ul>
+<li><p>-m或–machine 显示主机的硬件(CPU)名,- o显示操作系统</p>
+<p> -n或–nodename 显示主机在网络节点上的名称或主机名称</p>
+<p> -r或–release 显示linux操作系统内核版本号 -s或–sysname 显示linux内核名称</p>
+<p> -v 显示显示操作系统是第几个 version 版本  -a 显示全系统信息</p>
+<p>-p 显示处理器类型或unknown -i 显示硬件平台类型或unknown</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# uname -p</span><br><span class="line">i686</span><br><span class="line">[root@localhost ~]# uname -i</span><br><span class="line">i386</span><br><span class="line">[root@localhost ~]# uname -o</span><br><span class="line">GNU/Linux</span><br></pre></td></tr></table></figure>
+
+<h3 id="useradd-增加用户"><a href="#useradd-增加用户" class="headerlink" title="useradd 增加用户"></a>useradd 增加用户</h3><ul>
+<li>这3个user开头的命令只有root才能使用，其他要su或sudo</li>
+<li>创建的用户都在“/etc/passwd”文件中</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-g</td>
+<td>主组，必须已经存在</td>
+</tr>
+<tr>
+<td>-G</td>
+<td>附加组</td>
+</tr>
+<tr>
+<td>-p password</td>
+<td>设置密码</td>
+</tr>
+<tr>
+<td>-u</td>
+<td>uid</td>
+</tr>
+<tr>
+<td>-c</td>
+<td>注释</td>
+</tr>
+<tr>
+<td>-f days</td>
+<td>指定密码过期后多少天关闭账号</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# useradd -p 123456 user01</span><br></pre></td></tr></table></figure>
+
+<h3 id="usermod-更改用户"><a href="#usermod-更改用户" class="headerlink" title="usermod 更改用户"></a>usermod 更改用户</h3><ul>
+<li>-g,-G,-u 同useradd,-l 修改用户名登陆名称</li>
+<li>-a与-G同时使用添加附加组，-U 解锁用户</li>
+</ul>
+<h3 id="userdel-销户"><a href="#userdel-销户" class="headerlink" title="userdel 销户"></a>userdel 销户</h3><ul>
+<li>无法删除已登录用户，可通过kill_all删除登陆用户或-f 强制删除</li>
+<li>-r 删除家目录，彻底删除用户还需修改/etc/passwd/等文件</li>
+</ul>
+<h3 id="passwd-设置用户密码"><a href="#passwd-设置用户密码" class="headerlink" title="passwd 设置用户密码"></a>passwd 设置用户密码</h3><ul>
+<li><p>密码以密文形式保存在 /etc/shadow/</p>
+</li>
+<li><p>/etc/passwd/中文件：用户名**:<strong>口令:UID:GID:注释性描述</strong>:<strong>主目录</strong>:**登录Shell</p>
+</li>
+<li><p>UID 取值范围0-65535。0是超级用户root的标识号，1-99系统保留作为管理账号，普通用户的标识号从100-500</p>
+</li>
+<li><p>/etc/passwd/ gid为主组，/etc/group/可查看附加组</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  　　root:x:0:0:root:/root:/bin/bash</span><br><span class="line">  　　bin:x:1:1:bin:/bin:/sbin/nologin</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="group-3件套"><a href="#group-3件套" class="headerlink" title="group 3件套"></a>group 3件套</h3><ul>
+<li>groupadd -g 设置自定义id</li>
+<li>groupmod -n 改用户名</li>
+<li>groupdel 先将所用用户移出组后才能删除组</li>
+</ul>
+<h2 id="字符命令（-，-amp-amp-）"><a href="#字符命令（-，-amp-amp-）" class="headerlink" title="字符命令（|，&amp;&amp;）"></a>字符命令（|，&amp;&amp;）</h2><ul>
+<li>| 表示管道，上一条命令的输出，作为下一条命令参数输入</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# ps -aux | grep aux</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>&amp;&amp; 表示前一条命令执行成功时，才执行后一条命令</li>
+<li>|| 表示上一条命令执行失败后，才执行下一条命令</li>
+<li>&amp; 表示任务在后台执行，如要在后台运行</li>
+<li>于后台运行 test.jar程序 ，执行的日志重定向 到log.txt文件中：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# java -jar test.jar &gt; log.txt &amp;</span><br></pre></td></tr></table></figure>
+
+<h2 id="网络设置"><a href="#网络设置" class="headerlink" title="网络设置"></a>网络设置</h2><h3 id="网络配置文件位置"><a href="#网络配置文件位置" class="headerlink" title="网络配置文件位置"></a>网络配置文件位置</h3><ul>
+<li><p>/etc/sysconfig/network-scripts/ &amp;&amp; /ect/init.d/network</p>
+</li>
+<li><p>/etc/init.d是指向/etc/rc.d/init.d的软连接，用service命令可执行init.d目录中相应服务的脚本</p>
+</li>
+<li><p>/etc/sysconfig/network-scripts/ 中文件格式：</p>
+<ul>
+<li>DEVICE=eth0:1             ——&gt;设备名称<br>BOOTPROTO=DHCP      ——&gt;动态主机分配协议<br>NM_CONTROLLED=yes<br>ONBOOT=yes                ——&gt;开机启动<br>TYPE=Ethernet<br>IPADDR=192.168.<em>.</em>.*<br>NETMASK=255.255.255.0<br>GATEWAY=<em>.</em>.<em>.</em><br>DNS1=<em>.</em>.<em>.</em><br>IPV6INIT=no<br>USERCTL=no</li>
+</ul>
+</li>
+<li><p>修改eth2网卡配置文件:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#vi /etc/sysconfig/network-scripts/ifcfg-eth2</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="netstat-查看网络状态"><a href="#netstat-查看网络状态" class="headerlink" title="netstat 查看网络状态"></a>netstat 查看网络状态</h3><ul>
+<li><p>-t 只看tcp，-u只看udp, -n 列出地址端口，-l 过滤listen状态，-p 进程名称,-a所有端口</p>
+</li>
+<li><p>端口80：apach, 22: 命令行CMD</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~#netstat -tnlp</span><br><span class="line">netstat -l        #只显示监听端口</span><br><span class="line">netstat -lt       #只列出所有监听 tcp 端口</span><br><span class="line">netstat -lu       #只列出所有监听 udp 端口</span><br><span class="line">netstat -lx       #只列出所有监听 UNIX 端口</span><br><span class="line">netstat -s   显示所有端口的统计信息</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="ifconfig-网卡信息"><a href="#ifconfig-网卡信息" class="headerlink" title="ifconfig 网卡信息"></a>ifconfig 网卡信息</h3><ul>
+<li><p>eth0 表示第一块网卡， 其中 HWaddr 表示网卡的物理地址, Inet addr ：IP地址<br>,Bcast：广播地址,Mask：子网掩码,UP：正在使用的网络接口<br>,RX packets,TX packets接收和传输的数据包个数<br>,RX byte，TX byte表示接搜和传输的具体数目,</p>
+<p>Interrupt：终端信息 , Base address：内存地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#  ifconfig eth0</span><br><span class="line">eth0 Link encap:Ethernet HWaddr 52:54:AB:DD:6F:61</span><br><span class="line">inet addr:210.34.6.89 Bcast:210.34.6.127 Mask:255.255.255.128</span><br><span class="line">UP BROADCAST RUNNING MULTICAST MTU:1500 Metric:1</span><br><span class="line">RX packets:50568 errors:0 dropped:0 overruns:0 frame:198</span><br><span class="line">TX packets:3200 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">collisions:0 txqueuelen:100</span><br><span class="line">Interrupt:5 Base address:0xece0</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="重启网卡"><a href="#重启网卡" class="headerlink" title="重启网卡"></a>重启网卡</h3><ul>
+<li>ifdown 关闭网卡，ifup 开启</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># ifdown eth0</span><br><span class="line"># ifup eth0</span><br></pre></td></tr></table></figure>
+
+<h3 id="SSH-secure-shell"><a href="#SSH-secure-shell" class="headerlink" title="SSH secure shell"></a>SSH secure shell</h3><ul>
+<li><p>默认端口22，可在etc/ssh/ssh-config或/etc/init.d/sshd 中修改为0–65535</p>
+</li>
+<li><p>检查链路是否通畅:</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#ping  ip地址</span><br><span class="line">[root@localhost ~]#traceroute/tracert ip地址</span><br><span class="line">[root@localhost ~]#service sshd restart </span><br></pre></td></tr></table></figure>
+
+<h2 id="关机"><a href="#关机" class="headerlink" title="关机"></a>关机</h2><h3 id="shutdown"><a href="#shutdown" class="headerlink" title="shutdown"></a>shutdown</h3><ul>
+<li>-k发送关机警告，-t延时关机，-r重启，-h设置重启时间,ctrl+c取消关机 -c重开终端</li>
+<li>立即关闭系统</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# shutdown -h now</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>系统2分钟后重新启动</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#shutdown -r +2</span><br></pre></td></tr></table></figure>
+
+<h3 id="reboot"><a href="#reboot" class="headerlink" title="reboot"></a>reboot</h3><ul>
+<li>-f强制重启，-w模拟重启</li>
+</ul>
+<h3 id="halt"><a href="#halt" class="headerlink" title="halt"></a>halt</h3><p>halt -p     //关闭系统后关闭电源。 </p>
+<p>halt -d     //关闭系统，但不留下纪录。</p>
+<h2 id="系统时间"><a href="#系统时间" class="headerlink" title="系统时间"></a>系统时间</h2><h3 id="cal-日历"><a href="#cal-日历" class="headerlink" title="cal 日历"></a>cal 日历</h3><ul>
+<li>-y 输出该年日历，-s 从周日开始，-m 从周一开始，-3输出3个月</li>
+<li>输出2012年9月日历</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#cal 9 2012</span><br></pre></td></tr></table></figure>
+
+<h3 id="date-日期"><a href="#date-日期" class="headerlink" title="date 日期"></a>date 日期</h3><ul>
+<li>-s 修改系统时间，-d today 输出今日日期</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]date -s 07/13/2011</span><br><span class="line">[root@localhost ~]#date &quot;+%Y-%m-%d&quot;</span><br><span class="line">2013-02-19</span><br><span class="line">[root@localhost ~]#date &quot;+%H:%M:%S&quot;</span><br><span class="line">13:13:59</span><br><span class="line">[root@localhost ~]#date -d yesterday</span><br><span class="line">Mon Feb 18 13:11:58 CST 2013</span><br></pre></td></tr></table></figure>
+
+<h3 id="uptime-输出在线时间"><a href="#uptime-输出在线时间" class="headerlink" title="uptime 输出在线时间"></a>uptime 输出在线时间</h3><ul>
+<li>挂起也会累计算入，apache也算用户</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#localhost]$ uptime</span><br><span class="line">显示结果为：</span><br><span class="line">10:19:04 up 257 days, 18:56,  12 users,  load average: 2.10, 2.10,2.09</span><br></pre></td></tr></table></figure>
+
+<h2 id="Linux系统其他"><a href="#Linux系统其他" class="headerlink" title="Linux系统其他"></a>Linux系统其他</h2><h3 id="文件颜色"><a href="#文件颜色" class="headerlink" title="文件颜色"></a>文件颜色</h3><ul>
+<li><p>绿色—-&gt;可执行文件</p>
+</li>
+<li><p>红色—-&gt;压缩文件</p>
+</li>
+<li><p>深蓝色—-&gt;目录</p>
+</li>
+<li><p>浅蓝色—–&gt;链接文件</p>
+</li>
+<li><p>灰色—-&gt;其它文件</p>
+</li>
+</ul>
+<h3 id="运行级别-init-进程"><a href="#运行级别-init-进程" class="headerlink" title="运行级别(init 进程)"></a>运行级别(init 进程)</h3><ul>
+<li>在/etc/inittab 中可修改，只有root级能改，init进程号为1</li>
+<li>可通过如下方式查看运行级别4系统会运行程序</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># ls /etc/rc.d/rc4.d/</span><br><span class="line">K01dnsmasq    K30sendmail    K66gpsd   ...</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Linux 系统有 7 种运行级别(runlevel)：常用的是级别 3 和 5</li>
+</ul>
+<p>运行级别 0：系统停机状态，系统默认运行级别不能设为 0，否则不能正常启动<br>运行级别 1：单用户工作状态，root 权限，用于系统维护，禁止远程登陆<br>运行级别 2：多用户状态(无 Network File System)，不支持网络<br>运行级别 3：完全的多用户状态(有 NFS)，登陆后进入控制台命令行模式<br>运行级别 4：系统未使用，保留<br>运行级别 5：X11 控制台，登陆后进入图形 GUI 模式<br>运行级别 6：系统正常关闭并重启，默认运行级别不能设为 6，否则不能正常启动</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/05/17/Linux-%E6%8C%87%E4%BB%A4/" data-id="ckoseu15d000654j68ltbgs22" data-title="Linux 指令" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">下一页 &raquo;</a>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/" rel="tag">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 15px;">C</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/05/">五月 2021</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/05/17/Cpp-revise/">Cpp revise</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/C-revise/">C revise</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/Shell-%E7%BC%96%E7%A8%8B/">Shell 编程</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/vim%E7%BC%96%E8%BE%91%E5%99%A8/">vim编辑器</a>
+          </li>
+        
+          <li>
+            <a href="/2021/05/17/Linux-%E6%8C%87%E4%BB%A4/">Linux 指令</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2021 Bullet37<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
