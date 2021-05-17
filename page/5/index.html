@@ -71,10 +71,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-vim编辑器" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Shell-编程" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/05/17/vim%E7%BC%96%E8%BE%91%E5%99%A8/" class="article-date">
-  <time class="dt-published" datetime="2021-05-17T09:32:16.000Z" itemprop="datePublished">2021-05-17</time>
+    <a href="/2021/05/17/Shell-%E7%BC%96%E7%A8%8B/" class="article-date">
+  <time class="dt-published" datetime="2021-05-17T09:32:31.000Z" itemprop="datePublished">2021-05-17</time>
 </a>
     
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/17/vim%E7%BC%96%E8%BE%91%E5%99%A8/">vim编辑器</a>
+      <a class="p-name article-title" href="/2021/05/17/Shell-%E7%BC%96%E7%A8%8B/">Shell 编程</a>
     </h1>
   
 
@@ -93,255 +93,212 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="vim-编辑器"><a href="#vim-编辑器" class="headerlink" title="vim 编辑器"></a>vim 编辑器</h1><ul>
-<li><p>在vim程序中设定的vim工作方式是临时的，如果要永久保存vim的工作方式需要编辑vim的配置文件:/etc/vimrc</p>
-</li>
-<li><p>高亮模式进入vim</p>
-</li>
+        <h1 id="shell-编程"><a href="#shell-编程" class="headerlink" title="shell 编程"></a>shell 编程</h1><h2 id="基础内容"><a href="#基础内容" class="headerlink" title="基础内容"></a>基础内容</h2><ul>
+<li>echo 向控制台输出内容,echo $xxx即可输,y出变量</li>
+<li>/etc/init.d/ 下为shell 教程，/etc/shells 中有其他shell库</li>
+<li>#表示注释, 加减乘除等与C相同, 赋值不能含有空格，用VIM编辑，用txt文件编辑会有问题</li>
+<li>可通过如下方式运行shell脚本,一般用bash</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#vim +/key test.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#sh test.sh</span><br><span class="line">[root@localhost ~]#bash test.sh</span><br><span class="line">[root@localhost /bin/bash]# test.sh</span><br></pre></td></tr></table></figure>
+
+
 
 <ul>
-<li>vi 或 vim 进入文件第5行</li>
+<li>!path 为解释器路径，shell编程都为.sh文件</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#vim +5 test.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">echo &quot;Hello World !&quot;</span><br></pre></td></tr></table></figure>
 
-<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ul>
-<li><p>为默认模式，该模式无法输入</p>
-</li>
-<li><table>
+<table>
 <thead>
 <tr>
-<th>命令</th>
-<th>说明</th>
+<th>位置变量</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>w</td>
-<td>到下一个单词开头</td>
+<td>$!</td>
+<td>退出返回，为0则表示正常退出</td>
 </tr>
 <tr>
-<td>e</td>
-<td>到当前单词结尾</td>
+<td>$0</td>
+<td>当前进程或脚本名称</td>
 </tr>
 <tr>
-<td>b</td>
-<td>到前单词开头</td>
+<td>$1-9</td>
+<td>输入参数</td>
 </tr>
 <tr>
-<td>ge</td>
-<td>到前单词结尾</td>
+<td>$*</td>
+<td>所有参数的整体</td>
 </tr>
 <tr>
-<td>0或^</td>
-<td>到行头</td>
+<td>$@</td>
+<td>逐个读取所有参数</td>
 </tr>
 <tr>
-<td>$</td>
-<td>到行尾</td>
-</tr>
-<tr>
-<td>f&lt;&gt;</td>
-<td>向后搜索第一个&lt;&gt;内字符处</td>
-</tr>
-<tr>
-<td>F&lt;&gt;</td>
-<td>向前搜索第一个&lt;&gt;内字符处</td>
-</tr>
-<tr>
-<td>yy</td>
-<td>复制整行</td>
-</tr>
-<tr>
-<td>yw</td>
-<td>复制一个单词</td>
-</tr>
-<tr>
-<td>p</td>
-<td>粘贴至光标后(大写则为后)</td>
-</tr>
-<tr>
-<td>x或Delete</td>
-<td>删除游标所在字符(X则为前一个)</td>
-</tr>
-<tr>
-<td>dd</td>
-<td>删除整行</td>
-</tr>
-<tr>
-<td>5dd</td>
-<td>删除5行</td>
-</tr>
-<tr>
-<td>nG</td>
-<td>游标移动到第n行</td>
-</tr>
-<tr>
-<td>gg</td>
-<td>游标移动到第一行</td>
-</tr>
-<tr>
-<td>G</td>
-<td>游标移动到最后一行</td>
-</tr>
-<tr>
-<td>pgup/pgdn</td>
-<td>上下翻屏</td>
-</tr>
-<tr>
-<td>5+上下左右</td>
-<td>上下左右移动5行</td>
-</tr>
-<tr>
-<td>u</td>
-<td>撤销</td>
-</tr>
-<tr>
-<td>ctrl+r</td>
-<td>恢复撤销</td>
-</tr>
-<tr>
-<td>.</td>
-<td>重复上次操作，除了ctrl+r</td>
+<td>$!</td>
+<td>后台运行的最后一个进程的PID</td>
 </tr>
 </tbody></table>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul>
+<li>字符串可以用单引号，也可以用双引号，也可以不用引号</li>
+<li>单引号不单独出现</li>
+<li>双引号里可以有变量，转义字符</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#cat test.sh</span><br><span class="line">#!/bin/bash</span><br><span class="line">string=&#x27;cat /etc/passwd&#x27;</span><br><span class="line">echo $string # cat /etc/passwd</span><br><span class="line">echo $&#123;#string&#125; # 输出长度,16</span><br><span class="line">echo $&#123;string:0:3&#125; # 截取1-3位字符</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="数组与算式"><a href="#数组与算式" class="headerlink" title="数组与算式"></a>数组与算式</h2><ul>
+<li><p>在shell 中括号为数组，数字间空格隔开</p>
+<p>array_name=(value0 value1 value2 value3)</p>
+</li>
+<li><p>通过  ${数组名[下标]}  获取下标参数，@字符获得数组中全部元素，输出长度方法与字符串相同</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#cat test.sh</span><br><span class="line">#!/bin/bash</span><br><span class="line">array=(1 2 3 4)</span><br><span class="line">echo $&#123;#array&#125;	# 输出数组长度, 4</span><br><span class="line">echo $&#123;array[@]&#125;	# 输出所有数组元素</span><br><span class="line">echo $&#123;array[2]&#125;	# 输出，2</span><br><span class="line">len=$&#123;#array[*]&#125;	# 另外一种获得长度方法，len=4</span><br></pre></td></tr></table></figure></li>
+<li><p>通过如下3种方式进行运算符操作</p>
 </li>
 </ul>
-<h2 id="编辑模式"><a href="#编辑模式" class="headerlink" title="编辑模式"></a>编辑模式</h2><ul>
-<li><p>输入 [ i, I, o, O, a, A, r, R]等字母之后进入编辑模式，可以做文字数据输入</p>
-</li>
-<li><p>a：在光标后开始插入</p>
-<p>A：在行尾开始插入</p>
-<p>i：从光标前开始插入</p>
-<p>I：从光标列的第一个非空白字元面前开始插入</p>
-<p>o：在光标所在列下新增一列并进入输入模式</p>
-<p>O：在光标所在列上方新增一列并进入输入模式</p>
-</li>
-<li><p>该模式无法保存，需Esc退出至命令模式</p>
-</li>
-</ul>
-<h2 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h2><ul>
-<li>命令模式输入 / 或 : 进入末行模式，esc退回命令模式</li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#$((...)) 1</span><br><span class="line">#$[...]   2</span><br><span class="line">#expr ... 3</span><br><span class="line">#!/bin/bash</span><br><span class="line">a=$1 b=$2</span><br><span class="line">if [ -z $1 -o -z $2 ] # 判断参数不为空，注意留空格</span><br><span class="line">then echo &#x27;input numbers!&#x27;</span><br><span class="line">else echo $[$1+$2]</span><br><span class="line">echo $[$a+$b]</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<h2 id="判断与其他运算符"><a href="#判断与其他运算符" class="headerlink" title="判断与其他运算符"></a>判断与其他运算符</h2><ul>
+<li>! ,  -a, -o 为 非，与(&amp;&amp;)，或(||)</li>
+<li>作用于字符串的运算符</li>
 </ul>
 <table>
 <thead>
 <tr>
-<th>命令</th>
+<th>运算符</th>
 <th>说明</th>
+<th>例子</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>:syntax on/off</td>
-<td>开启/关闭语法提示</td>
+<td>=</td>
+<td>字符串判等</td>
+<td></td>
 </tr>
 <tr>
-<td>:w</td>
-<td>保存文件</td>
+<td>!=</td>
+<td>字符串判不等</td>
+<td></td>
 </tr>
 <tr>
-<td>:w path</td>
-<td>存在path下</td>
+<td>-z</td>
+<td>字符串长度为0返回true</td>
+<td>[ -z $a ]</td>
 </tr>
 <tr>
-<td>:wq</td>
-<td>保存并退出，就算未修改文件也更改文件时间</td>
+<td>-n</td>
+<td>字符串长度不为0返回true</td>
+<td>[ -n $a ]</td>
 </tr>
 <tr>
-<td>:x</td>
-<td>保存并退出，未更改文件就不改时间</td>
-</tr>
-<tr>
-<td>:q!</td>
-<td>不保存强制退出</td>
-</tr>
-<tr>
-<td>:10</td>
-<td>移动到第十行</td>
-</tr>
-<tr>
-<td>:wq!</td>
-<td>强制保存退出</td>
-</tr>
-<tr>
-<td>!</td>
-<td>使用外部命令，如!ls</td>
-</tr>
-<tr>
-<td>:set nu</td>
-<td>显示行号</td>
-</tr>
-<tr>
-<td>:set nonu</td>
-<td>取消显示行号</td>
-</tr>
-<tr>
-<td>:u</td>
-<td>撤销上一个命令</td>
-</tr>
-<tr>
-<td>:X</td>
-<td>设置密码，再次输入则解密</td>
-</tr>
-<tr>
-<td>:hl</td>
-<td>设置高亮，nohl取消高亮</td>
-</tr>
-<tr>
-<td>:: something</td>
-<td>查找something</td>
+<td>str</td>
+<td>长度不为0返回true</td>
+<td>[ $a ]</td>
 </tr>
 </tbody></table>
 <ul>
-<li> :1,5s/:/@/g  ##替换1-5行的：为@</li>
-<li> :%s/:/@/g   ##替换全文的：为@</li>
-<li> :%s/要替换的字符/替换成的字符/g   , 只替换一处</li>
-<li> %s标示所有的行，g标示所有的列</li>
+<li>作用于数字的运算符</li>
 </ul>
-<h3 id="多个文件处理"><a href="#多个文件处理" class="headerlink" title="多个文件处理"></a>多个文件处理</h3><table>
+<table>
 <thead>
 <tr>
-<th>命令</th>
+<th>运算符</th>
 <th>说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>:bn</td>
-<td>下一个文件</td>
+<td>-eq</td>
+<td>两数相等返回true</td>
 </tr>
 <tr>
-<td>:bp</td>
-<td>上一个文件</td>
+<td>-ne</td>
+<td>两数不相等返回true</td>
 </tr>
 <tr>
-<td>:open file2</td>
-<td>打开另外的文件</td>
+<td>-gt</td>
+<td>左&gt;右返回true</td>
 </tr>
 <tr>
-<td>:files</td>
-<td>查看各文件，%a为当前活动，#为上一个打开的</td>
+<td>-lt</td>
+<td>左&lt;右返回true</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
+<td>-ge</td>
+<td>左&gt;=右返回true</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>左&lt;=右返回true</td>
 </tr>
 </tbody></table>
-<h2 id="vim的配置"><a href="#vim的配置" class="headerlink" title="vim的配置"></a>vim的配置</h2><ul>
-<li><p>临时配置：命令行中的修改</p>
-</li>
-<li><p>个人配置：在 user/vimrc中修改</p>
-</li>
-<li><p>全局配置：etc/vimrc中</p>
-</li>
-<li><p>临时&gt;个人&gt;全局</p>
-</li>
-<li><p>若vim未保存退出，可删除同目录下的 .passwd.swp避免报错</p>
-</li>
+<ul>
+<li>作用于文件的常用运算符</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-d</td>
+<td>文件若是目录则返回true</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>文件若是普通文件则返回true</td>
+</tr>
+<tr>
+<td>-r/w/x</td>
+<td>读/写/执行 的权限</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>文件是否存在</td>
+</tr>
+</tbody></table>
+<h2 id="if-amp-switch"><a href="#if-amp-switch" class="headerlink" title="if &amp; switch"></a>if &amp; switch</h2><ul>
+<li>if 结构，注意 要和其他语句中间有空格，出现if必须跟着then</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">if [ &quot;a&quot; == &quot;b&quot; ]</span><br><span class="line">then</span><br><span class="line">        echo yes</span><br><span class="line">elif [ &quot;a&quot; == &quot;a&quot; ]</span><br><span class="line">then</span><br><span class="line">        echo abc</span><br><span class="line">else</span><br><span class="line">        echo no</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>case 结构, 注意 ;;</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">#c 为 start/stop/restart</span><br><span class="line">c=$1</span><br><span class="line">case $c in</span><br><span class="line">start)	echo &quot;start&quot; ;;</span><br><span class="line">stop) echo &quot;stop&quot; ;;</span><br><span class="line">restart) echo &quot;restart&quot; ;;</span><br><span class="line">esac</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="for-amp-while"><a href="#for-amp-while" class="headerlink" title="for &amp; while"></a>for &amp; while</h2><ul>
+<li>for 结构,let中变量可不用$x 表示</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">i=1</span><br><span class="line">sum=0</span><br><span class="line"></span><br><span class="line">for i in &#123;1..99&#125;</span><br><span class="line">do </span><br><span class="line">	let sum+=i</span><br><span class="line">	let i++</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">echo $sum # 4950</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>while 结构</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">i=1</span><br><span class="line">sum=0</span><br><span class="line"></span><br><span class="line"># while read -r line 可用于读文件</span><br><span class="line">while i in &#123;1..99&#125;</span><br><span class="line">do </span><br><span class="line">	let sum+=i</span><br><span class="line">	let i++</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">echo $sum #5050</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h2><ul>
+<li>read 输入信息，在函数后直接加要输入的实参即可,$?获取函数的return值</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">fun()&#123;</span><br><span class="line">    echo &quot;第一个参数为 $1 !&quot;</span><br><span class="line">    echo &quot;第二个参数为 $2 !&quot;</span><br><span class="line">    echo &quot;输入第一个数字: &quot;</span><br><span class="line">    read a</span><br><span class="line">    echo &quot;输入第二个数字: &quot;</span><br><span class="line">    read b</span><br><span class="line">    return $(($a+$b))</span><br><span class="line">&#125;</span><br><span class="line">fun 1 2 </span><br><span class="line">echo &quot;Sum: $? !&quot;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输出如下</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">第一个参数为 1 !</span><br><span class="line">第二个参数为 2 !</span><br><span class="line">输入第一个数字: </span><br><span class="line">1</span><br><span class="line">输入第二个数字: </span><br><span class="line">2</span><br><span class="line">Sum: 3 !</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/17/vim%E7%BC%96%E8%BE%91%E5%99%A8/" data-id="ckosl967a000dboj6d7f42pfk" data-title="vim编辑器" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/05/17/Shell-%E7%BC%96%E7%A8%8B/" data-id="ckoslfkis000824j6f1l8amz4" data-title="Shell 编程" class="article-share-link">分享</a>
       
       
       
@@ -359,7 +316,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/6/">下一页 &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/">下一页 &raquo;</a>
   </nav>
 
 </section>
@@ -383,7 +340,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C/" style="font-size: 15px;">C</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+      <a href="/tags/C/" style="font-size: 20px;">C</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
     </div>
   </div>
 
@@ -405,6 +362,10 @@
       <ul>
         
           <li>
+            <a href="/2021/05/17/Cpp-STL/">Cpp STL</a>
+          </li>
+        
+          <li>
             <a href="/2021/05/17/hello-world/">Hexo Note</a>
           </li>
         
@@ -418,10 +379,6 @@
         
           <li>
             <a href="/2021/05/17/Shell-%E7%BC%96%E7%A8%8B/">Shell 编程</a>
-          </li>
-        
-          <li>
-            <a href="/2021/05/17/vim%E7%BC%96%E8%BE%91%E5%99%A8/">vim编辑器</a>
           </li>
         
       </ul>
