@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/05/17/hello-world/">Hello World</a>
+      <a class="p-name article-title" href="/2021/05/17/hello-world/">Hexo Note</a>
     </h1>
   
 
@@ -93,24 +93,51 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+        <h2 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h2><ul>
+<li>-v 查看依赖是否安装成功</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">D:\git_blog&gt;node -v</span><br><span class="line">D:\git_blog&gt;npm -v</span><br><span class="line">D:\git_blog&gt;npm install -g cnpm --registry=http://registry.npm.taobao.org	</span><br><span class="line">#安装淘宝的cnpm 管理器</span><br><span class="line">D:\git_blog&gt;cnpm -v</span><br><span class="line">D:\git_blog&gt;cnpm install -g hexo-cli </span><br><span class="line">#安装hexo框架</span><br><span class="line">D:\git_blog&gt;sudo hexo init</span><br><span class="line">#生成博客，初始化博客</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br><span class="line">$ hexo n <span class="string">&quot;My New Post&quot;</span></span><br><span class="line">$ hexo new post <span class="string">&quot;My New Post&quot;</span></span><br><span class="line">$ hexo new page <span class="string">&quot;My New Page&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><ul>
+<li>Hexo is running at <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h2 id="部署操作"><a href="#部署操作" class="headerlink" title="部署操作"></a>部署操作</h2><ol>
+<li>下载git部署插件</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\git_blog&gt;cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>更改_config.yml文件Deployment</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">	## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">	deploy:</span><br><span class="line">  		type: git</span><br><span class="line"> 		repo: https://github.com/YourGithubName/YourGithubName.github.io.git</span><br><span class="line">  		branch: master</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>部署hexo</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:\git_blog&gt;hexo clean</span><br><span class="line">D:\git_blog&gt;hexo g</span><br><span class="line">D:\git_blog&gt;hexo d</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>登陆网站查看博客：</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://bullet37.github.io/">https://bullet37.github.io/</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/05/17/hello-world/" data-id="ckoskptad0004bcj64ekj2iad" data-title="Hello World" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2021/05/17/hello-world/" data-id="ckosl96720005boj6aa90ajxp" data-title="Hexo Note" class="article-share-link">分享</a>
       
       
       
@@ -172,7 +199,7 @@
       <ul>
         
           <li>
-            <a href="/2021/05/17/hello-world/">Hello World</a>
+            <a href="/2021/05/17/hello-world/">Hexo Note</a>
           </li>
         
           <li>
